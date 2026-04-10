@@ -1,0 +1,9 @@
+{
+  "name": "football-scout-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node dev-server.mjs",
+    "start": "node dev-server.mjs"
+  }
+}
