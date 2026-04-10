@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "node dev-server.mjs",
-    "start": "node dev-server.mjs"
+    "start": "node dev-server.mjs",
+    "localhost": "node dev-server.mjs",
+    "localhost:5174": "set PORT=5174&& node dev-server.mjs"
   }
 }
