@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cal Botterill | Football Scouting Portfolio</title>
+  <meta
+    name="description"
+    content="Football scouting portfolio for Cal Botterill, featuring SquadIQ, sports science credentials, dissertation work, and scouting report examples."
+  />
+  <meta name="theme-color" content="#071224" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-glow page-glow-left"></div>
+  <div class="page-glow page-glow-right"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="logo">
+        <span class="logo-text"><span class="logo-white">Cal Botterill | </span><span class="logo-green">Football Scout & Analyst</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#reports">Reports</a>
+        <a href="#background">Education</a>
+        <a href="#squadiq">SquadIQ</a>
+        <a href="#contact">Contact</a>
+        <a href="cv.html" target="_blank" rel="noopener noreferrer">View CV</a>
+      </nav>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        ☰
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#home">Home</a>
+      <a href="#reports">Reports</a>
+      <a href="#background">Education</a>
+      <a href="#squadiq">SquadIQ</a>
+      <a href="#contact">Contact</a>
+      <a href="cv.html" target="_blank" rel="noopener noreferrer">View CV</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" data-reveal>
+      <div class="hero-tactical-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>
+            Performance-Led
+            <span>Football Scouting</span>
+          </h1>
+
+          <div class="hero-intro-card">
+            <p class="hero-lead">
+              I analyse players, assess tactical roles, and produce recruitment-focused reports built on real match observation.
+            </p>
+
+            <p class="hero-support">
+              My work combines live and video analysis, role-based profiling, and structured scouting frameworks to deliver clear, actionable insight for recruitment and performance decisions.
+            </p>
+          </div>
+
+          <div class="hero-tags" aria-label="Key profile highlights">
+            <span>Qualified Scout</span>
+            <span>Sports Science Background</span>
+            <span>Real Match Scouting Experience</span>
+            <span>Scouting Software Builder</span>
+          </div>
+
+        </div>
+
+        <aside class="hero-media tilt-card" data-tilt>
+          <div class="hero-media-overlay"></div>
+          <div class="hero-media-frame">
+            <img
+              src="images/Scout Photo.png"
+              alt="Cal Botterill"
+              class="media-image hero-profile-image"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <div class="hero-image-overlay"></div>
+          </div>
+        </aside>
+      </div>
+
+    </section>
+
+    <section class="section" id="reports" data-reveal>
+      <div class="container section-shell">
+        <div class="section-heading wide-heading">
+          <p class="section-tag">Scouting • Reporting • Analysis</p>
+          <h2>Reports</h2>
+          <p>Selected scouting work focused on role fit, tactical context, and actionable recommendation.</p>
+        </div>
+
+        <div class="reports-grid" id="reportsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section foundation-section" id="background" data-reveal>
+      <div class="container section-shell">
+        <div class="foundation-v2">
+          <div class="foundation-v2-glow"></div>
+
+          <div class="foundation-v2-inner">
+            <div class="foundation-v2-head">
+              <p class="foundation-v2-tag">Sports Science • Education • Research</p>
+              <h2>Qaulifications</h2>
+            </div>
+
+            <div class="foundation-v2-grid">
+              <div class="foundation-v2-left">
+                <div class="foundation-v2-certificate">
+                  <div class="foundation-v2-certificate-inner">
+                    <!-- Replace with your certificate image:
+                         <img src="images/degree-certificate.jpg" alt="Sports Science degree certificate" class="foundation-v2-image" /> -->
+                    <img
+                      src="images/Sports Science Certificate Photo.png"
+                      alt="Sports Science degree certificate"
+                      class="foundation-v2-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+
+                <div class="foundation-v2-mini-grid">
+                  <article class="foundation-v2-mini-card">
+                    <p>Degree</p>
+                    <h3>BSc Sports Science</h3>
+                    <span>Developed applied knowledge of physiology, psychology, and performance, used to assess players in match and training contexts.</span>
+                  </article>
+
+                  <article class="foundation-v2-mini-card">
+                    <p>College Foundation</p>
+                    <h3>BTEC Sport Diplomas</h3>
+                    <span>Built an early foundation in coaching, performance, and practical sport application.</span>
+                  </article>
+
+                  <article class="foundation-v2-mini-card foundation-v2-mini-wide">
+                    <p>Scouting Lens</p>
+                    <h3>Why it matters</h3>
+                    <span>My sports science background supports player assessment beyond technical ability, with a strong understanding of decision-making, behaviour, resilience, and readiness for senior football.</span>
+                  </article>
+                </div>
+
+                <div class="foundation-v2-actions">
+                  <button
+                    type="button"
+                    id="openFoundationDocsModal"
+                    class="btn btn-secondary foundation-v2-alt-btn"
+                    aria-haspopup="dialog"
+                    aria-controls="foundationDocsModal"
+                    aria-expanded="false"
+                  >
+                    View Documents
+                  </button>
+                </div>
+              </div>
+
+              <div class="foundation-v2-right">
+                <div class="foundation-v2-research">
+                  <p>Dissertation</p>
+                  <h3>Skills & Attributes Required for Academy Progression</h3>
+                  <span>
+                    Research identifying the key factors influencing progression from academy to senior football, supporting player assessment and long-term development profiling.
+                  </span>
+                  <ul class="foundation-v2-research-points">
+                    <li>Psychological: resilience, self-belief, coachability, consistency under pressure.</li>
+                    <li>Game: decision-making speed, tactical understanding, technical execution.</li>
+                    <li>Environment: pressure, support structures, and daily habits influencing development.</li>
+                  </ul>
+                </div>
+
+                <div class="foundation-v2-quals">
+                  <article class="foundation-v2-qual-group">
+                    <h4>Core Scouting</h4>
+                    <ul>
+                      <li>IPSO Level 3 Youth Scouting</li>
+                      <li>FA Introduction to Talent Identification</li>
+                      <li>PFSA Talent Identification in Football</li>
+                    </ul>
+                  </article>
+
+                  <article class="foundation-v2-qual-group">
+                    <h4>Analysis & Reporting</h4>
+                    <ul>
+                      <li>PFSA Technical Scouting in Football</li>
+                      <li>PFSA Opposition Analysis in Football</li>
+                      <li>Video Analysis Tools: Wyscout and Hudl (familiar)</li>
+                    </ul>
+                  </article>
+
+                  <article class="foundation-v2-qual-group">
+                    <h4>Data & Modern Methods</h4>
+                    <ul>
+                      <li>PFSA Data Analysis in Football</li>
+                      <li>StatsBomb Introduction to Football Analytics</li>
+                    </ul>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="squadiq" data-reveal>
+      <div class="container section-shell featured-shell">
+        <div class="squadiq-feature-grid">
+          <article class="squadiq-copy">
+            <div class="section-heading wide-heading">
+              <h2>Turning football analysis into clear decisions</h2>
+              <p>
+                I built SquadIQ from my own experience analysing players and matches — focusing on clarity, role fit, and decisions that actually translate to the pitch.
+              </p>
+            </div>
+
+            <div class="squadiq-feature-tags">
+              <span class="squadiq-tag">Matchday Control</span>
+              <span class="squadiq-tag">Squad Overview</span>
+              <span class="squadiq-tag">Player Evaluation</span>
+              <span class="squadiq-tag">Built for Elite Football</span>
+            </div>
+
+            <div class="squadiq-cta-row">
+              <a href="https://www.squadiq.co.uk/" class="btn btn-primary squadiq-main-btn" target="_blank" rel="noopener noreferrer">Explore SquadIQ</a>
+            </div>
+            <p class="squadiq-built-note">Applied across real match analysis, player evaluation, and squad decision-making</p>
+          </article>
+
+          <article class="squadiq-shots tilt-card" data-tilt>
+            <div class="shots-grid">
+              <!-- Screenshot 1: replace with your real image at images/squadiq-1.jpg -->
+              <figure class="shot-card shot-1">
+                <span class="shot-label">Matchday & Lineup View</span>
+              </figure>
+
+              <!-- Screenshot 2: replace with your real image at images/squadiq-2.jpg -->
+              <figure class="shot-card shot-2">
+                <span class="shot-label">Player Analysis & Attributes</span>
+              </figure>
+            </div>
+            <div class="squadiq-center-mark">
+              <span class="squadiq-center-main">SQUAD</span>
+              <span class="squadiq-center-accent">IQ</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" data-reveal>
+      <div class="container">
+        <div class="section-heading wide-heading">
+          <p class="section-tag">Contact</p>
+          <h2>Let’s connect</h2>
+          <p>Open to scouting opportunities, report projects, and football analysis collaborations.</p>
+        </div>
+
+        <div class="card-panel contact-card">
+          <div class="contact-profile">
+            <img
+              src="images/profile.jpg"
+              alt="Cal Botterill profile photo"
+              class="contact-profile-image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="contact-details">
+            <p class="contact-name">Cal Botterill</p>
+            <p>
+              Email: <a href="mailto:calwbotterill@gmail.com">calwbotterill@gmail.com</a>
+            </p>
+            <p>
+              Phone / WhatsApp: <a href="tel:07584693950">07584693950</a>
+            </p>
+            <div class="contact-actions">
+              <a href="cv.html" target="_blank" rel="noopener noreferrer" class="btn contact-cv-btn">View CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="cert-modal" id="certificatesModal" aria-hidden="true">
+    <div class="cert-modal-backdrop" data-modal-close></div>
+    <div class="cert-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" tabindex="-1">
+      <button type="button" class="cert-modal-close" id="closeCertificatesModal" aria-label="Close certificates modal">×</button>
+      <p class="cert-modal-tag">Qualifications</p>
+      <h3 id="certModalTitle">Certificate Links</h3>
+      <p class="cert-modal-copy">Open any certificate below in a new tab.</p>
+
+      <div class="cert-modal-list" id="certificatesList"></div>
+    </div>
+  </div>
+
+  <div class="cert-modal" id="foundationDocsModal" aria-hidden="true">
+    <div class="cert-modal-backdrop" data-modal-close></div>
+    <div class="cert-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="foundationDocsModalTitle" tabindex="-1">
+      <button type="button" class="cert-modal-close" id="closeFoundationDocsModal" aria-label="Close documents modal">×</button>
+      <p class="cert-modal-tag">Sports Science & Research</p>
+      <h3 id="foundationDocsModalTitle">Document Links</h3>
+      <p class="cert-modal-copy">Open any document below in a new tab.</p>
+
+      <div class="cert-modal-list" id="foundationDocsList"></div>
+    </div>
+  </div>
+
+  <script src="content-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
