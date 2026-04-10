@@ -38,7 +38,7 @@ window.siteData = {
       tag: "Scouting Report",
       description:
         "Full scouting document with match overview and individual player assessments.",
-      imageSrc: "images/Derby Womans photo.png",
+      imageSrc: "images/Derby-Women-photo.png",
       imageAlt: "Derby County Women scouting report cover",
       imageClass: "reports-spotlight-image-focus-center",
       href: "reports/derby-county-women-scouting-report.html",
@@ -47,9 +47,9 @@ window.siteData = {
   ],
   certificates: [
     { label: "IPSO Level 3 Youth Scouting", href: "IPSO-Level-3-Youth-Scouting-Certificate.pdf" },
-    { label: "FA Introduction to Talent Identification", href: "FA-Introduction-to-Talent-Identifacation-Certificate.pdf" },
+    { label: "FA Introduction to Talent Identification", href: "FA-Introduction-to-Talent-Identification-Certificate.pdf" },
     { label: "PFSA Talent Identification in Football", href: "PFSA-Level-2-Talent-Identification-In-Football-Certificate.pdf" },
-    { label: "PFSA Technical Scouting in Football", href: "PFSA-Level-2-Technical-Scouting-In-Football Certificate.pdf" },
+    { label: "PFSA Technical Scouting in Football", href: "PFSA-Level-2-Technical-Scouting-In-Football-Certificate.pdf" },
     { label: "PFSA Opposition Analysis in Football", href: "PFSA-Level-2-Opposition-Analysis-In-Football-Certificate.pdf" },
     { label: "PFSA Data Analysis in Football", href: "PFSA-Level-1-Data-Analysis-In-Football-Certificate.pdf" },
     { label: "StatsBomb Introduction to Football Analytics", href: "StatsBomb-Introduction-to-Football-Analytics-Certificate.pdf" }
@@ -59,9 +59,9 @@ window.siteData = {
     { label: "View BTEC", href: "Cal%20Botterill%20BTEC%20Level%203%2090-Credit%20%26%20Extended%20Sport.pdf" },
     { label: "View Dissertation", href: "Skills and Attributes Required by Football Clubs for Academy Graduate.pdf" },
     { label: "IPSO Level 3 Youth Scouting", href: "IPSO-Level-3-Youth-Scouting-Certificate.pdf" },
-    { label: "FA Introduction to Talent Identification", href: "FA-Introduction-to-Talent-Identifacation-Certificate.pdf" },
+    { label: "FA Introduction to Talent Identification", href: "FA-Introduction-to-Talent-Identification-Certificate.pdf" },
     { label: "PFSA Talent Identification in Football", href: "PFSA-Level-2-Talent-Identification-In-Football-Certificate.pdf" },
-    { label: "PFSA Technical Scouting in Football", href: "PFSA-Level-2-Technical-Scouting-In-Football Certificate.pdf" },
+    { label: "PFSA Technical Scouting in Football", href: "PFSA-Level-2-Technical-Scouting-In-Football-Certificate.pdf" },
     { label: "PFSA Opposition Analysis in Football", href: "PFSA-Level-2-Opposition-Analysis-In-Football-Certificate.pdf" },
     { label: "PFSA Data Analysis in Football", href: "PFSA-Level-1-Data-Analysis-In-Football-Certificate.pdf" },
     { label: "StatsBomb Introduction to Football Analytics", href: "StatsBomb-Introduction-to-Football-Analytics-Certificate.pdf" }
