@@ -148,6 +148,14 @@
       color: #1f2f47;
     }
 
+    .summary-box p {
+      margin: 0;
+    }
+
+    .summary-box p + p {
+      margin-top: 12px;
+    }
+
     .players {
       display: grid;
       gap: 14px;
@@ -196,6 +204,18 @@
       color: #fff;
     }
 
+    .player-head .pill:nth-of-type(odd) {
+      border: 1px solid rgba(218, 165, 32, 0.3);
+      background: #050505;
+      color: #ffffff;
+    }
+
+    .player-head .pill:nth-of-type(even) {
+      border: 1px solid rgba(5, 5, 5, 0.22);
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #050505;
+    }
+
     .player-meta {
       font-size: 13px;
       color: var(--muted);
@@ -207,14 +227,6 @@
       font-size: 14px;
       line-height: 1.68;
       color: var(--ink-2);
-    }
-
-    .footer-note {
-      margin-top: 24px;
-      font-size: 12px;
-      color: #5f6f86;
-      border-top: 1px solid var(--line);
-      padding-top: 12px;
     }
 
     @media (max-width: 980px) {
@@ -292,7 +304,8 @@
     <div class="section">
       <div class="section-title">Match Overview</div>
       <div class="summary-box">
-        Derby County Women were observed in a 1-2 defeat against Sporting Khalsa Women. The match provided a useful platform to assess individual quality across the squad, with several players showing traits that could translate well to higher levels. Derby displayed physical competitiveness, periods of composed possession, and a number of strong individual actions in both defensive and attacking phases. The standout impression from the game was the influence of the central midfield unit, along with the balance shown by the full-backs and the direct impact of attacking players in moments. This report focuses on the most notable individual performances and player profiles from the match.
+        <p>Derby County Women were defeated 2-1 by Sporting Khalsa Women in a competitive and physically demanding fixture. Derby operated primarily in a structured shape, looking to build attacks through composed possession phases while remaining competitive in defensive duels across the pitch. They showed periods of control in possession and demonstrated a willingness to progress play through central areas, although consistency in retaining the ball and sustaining attacking pressure proved difficult against an organised Sporting Khalsa side.</p>
+        <p>Sporting Khalsa displayed strong physicality, defensive organisation and a direct attacking approach, often looking to transition quickly into forward areas when opportunities arose. Derby remained competitive throughout and produced several positive individual performances, particularly within the central midfield unit where technical quality, work rate and game intelligence were evident. The full-backs also provided balance in both defensive and attacking phases, while the forward players showed the ability to create moments of danger despite limited opportunities. Although the result was disappointing, the fixture provided a useful platform to assess individual qualities, with several players displaying attributes capable of translating to a higher level of football.</p>
       </div>
     </div>
 
@@ -315,9 +328,6 @@
       </div>
     </div>
 
-    <div class="footer-note">
-      Internal scouting document. Final recruitment recommendation and grading can be added beneath the player assessments if required.
-    </div>
   </div>
 
 </body>

@@ -11,6 +11,11 @@
   <meta name="theme-color" content="#071224" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Rajdhani:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preload" as="image" href="images/Scout Photo.png" fetchpriority="high" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -60,26 +65,26 @@
       <div class="hero-tactical-bg" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
+          <p class="hero-eyebrow">Football Scout • Analyst • Software Builder</p>
+
           <h1>
             Performance-Led
             <span>Football Scouting</span>
           </h1>
 
-          <div class="hero-intro-card">
-            <p class="hero-lead">
-              I analyse players, assess tactical roles, and produce recruitment-focused reports built on real match observation.
-            </p>
+          <p class="hero-value-prop">
+            Helping clubs make better recruitment and performance decisions through scouting, analysis and football intelligence.
+          </p>
 
-            <p class="hero-support">
-              My work combines live and video analysis, role-based profiling, and structured scouting frameworks to deliver clear, actionable insight for recruitment and performance decisions.
-            </p>
-          </div>
+          <p class="hero-credentials" aria-label="Credentials">
+            <span>✓ PFSA Qualified</span>
+            <span>✓ BSc Sports Science</span>
+            <span>✓ Founder of SquadIQ</span>
+          </p>
 
-          <div class="hero-tags" aria-label="Key profile highlights">
-            <span>Qualified Scout</span>
-            <span>Sports Science Background</span>
-            <span>Real Match Scouting Experience</span>
-            <span>Scouting Software Builder</span>
+          <div class="hero-cta-row" aria-label="Primary actions">
+            <a href="#reports" class="hero-cta hero-cta-primary">View Reports</a>
+            <a href="cv.html" target="_blank" rel="noopener noreferrer" class="hero-cta hero-cta-secondary">View CV</a>
           </div>
 
         </div>
@@ -91,6 +96,8 @@
               src="images/Scout Photo.png"
               alt="Cal Botterill"
               class="media-image hero-profile-image"
+              width="1919"
+              height="1071"
               fetchpriority="high"
               decoding="async"
             />
@@ -133,6 +140,8 @@
                       src="images/Sports Science Certificate Photo.png"
                       alt="Sports Science degree certificate"
                       class="foundation-v2-image"
+                      width="582"
+                      height="734"
                       loading="lazy"
                       decoding="async"
                     />
@@ -288,6 +297,8 @@
               src="images/profile.jpg"
               alt="Cal Botterill profile photo"
               class="contact-profile-image"
+              width="3024"
+              height="3024"
               loading="lazy"
               decoding="async"
             />
@@ -333,8 +344,8 @@
     </div>
   </div>
 
-  <script src="content-data.js"></script>
-  <script src="script.js"></script>
+  <script src="content-data.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="motion-enhancements.js" type="module"></script>
 </body>
 </html>
-npm 

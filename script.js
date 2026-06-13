@@ -12,12 +12,24 @@ function renderReports() {
     return;
   }
 
-  reportsGrid.innerHTML = siteData.reports
-    .map((report) => {
+  const sortedReports = [...siteData.reports].sort((a, b) => {
+    const aTime = Date.parse(a.dateSort || "") || 0;
+    const bTime = Date.parse(b.dateSort || "") || 0;
+    return bTime - aTime;
+  });
+
+  reportsGrid.innerHTML = sortedReports
+    .map((report, index) => {
       const hasImage = typeof report.imageSrc === "string" && report.imageSrc.length > 0;
       const hasHref = typeof report.href === "string" && report.href.length > 0;
+      const imageClass =
+        typeof report.imageClass === "string" && report.imageClass.length > 0
+          ? ` ${report.imageClass}`
+          : "";
+      const imageWidth = Number.isFinite(report.imageWidth) ? report.imageWidth : 640;
+      const imageHeight = Number.isFinite(report.imageHeight) ? report.imageHeight : 427;
       const mediaMarkup = hasImage
-        ? `<img src="${report.imageSrc}" alt="${report.imageAlt}" loading="lazy" decoding="async" />`
+        ? `<img src="${report.imageSrc}" alt="${report.imageAlt}"${imageClass ? ` class="${imageClass.trim()}"` : ""} width="${imageWidth}" height="${imageHeight}" loading="${index === 0 ? "eager" : "lazy"}" fetchpriority="${index === 0 ? "high" : "auto"}" decoding="async" />`
         : `<div class="report-slot-placeholder"><span>Add Cover Photo</span></div>`;
       const actionMarkup = hasHref
         ? `<a href="${report.href}" target="_blank" rel="noopener noreferrer" class="report-button">View Report</a>`
@@ -30,6 +42,7 @@ function renderReports() {
           </div>
           <div class="report-content">
             <p class="report-label">${report.tag}</p>
+            ${report.when ? `<p class="report-date">${report.when}</p>` : ""}
             <h3 class="report-title">${report.title}</h3>
             <p class="report-description">${report.description}</p>
             <div class="report-actions">
@@ -65,6 +78,7 @@ const mobileMenu = document.getElementById("mobileMenu");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const sectionIds = ["home", "reports", "background", "squadiq", "contact"];
 const topNavSectionLinks = document.querySelectorAll('.nav-links a[href^="#"], .mobile-menu a[href^="#"]');
+let activeSectionId = "";
 
 function setMobileMenuState(isOpen) {
   if (!menuToggle || !mobileMenu) {
@@ -106,6 +120,11 @@ if (menuToggle && mobileMenu) {
 }
 
 function syncActiveSectionLinks(activeId) {
+  if (activeId === activeSectionId) {
+    return;
+  }
+  activeSectionId = activeId;
+
   [...topNavSectionLinks].forEach((link) => {
     if (!(link instanceof HTMLAnchorElement)) {
       return;
@@ -126,7 +145,20 @@ const sectionElements = sectionIds
   .filter((el) => el instanceof HTMLElement);
 
 if (sectionElements.length > 0) {
+  let sectionOffsets = [];
+  let ticking = false;
+
+  // Performance: cache section offsets so scroll does not force repeated layout reads.
+  function cacheSectionOffsets() {
+    sectionOffsets = sectionElements.map((section) => ({
+      id: section.id,
+      top: section.offsetTop
+    }));
+    updateActiveSectionFromScroll();
+  }
+
   function updateActiveSectionFromScroll() {
+    ticking = false;
     const isNearBottom =
       window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
     if (isNearBottom) {
@@ -135,12 +167,11 @@ if (sectionElements.length > 0) {
       return;
     }
 
-    const viewportAnchor = window.innerHeight * 0.33;
-    let activeId = sectionElements[0].id;
+    const anchorY = window.scrollY + window.innerHeight * 0.33;
+    let activeId = sectionOffsets[0]?.id || sectionElements[0].id;
 
-    for (const section of sectionElements) {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= viewportAnchor) {
+    for (const section of sectionOffsets) {
+      if (section.top <= anchorY) {
         activeId = section.id;
       } else {
         break;
@@ -150,67 +181,75 @@ if (sectionElements.length > 0) {
     syncActiveSectionLinks(activeId);
   }
 
-  updateActiveSectionFromScroll();
-  window.addEventListener("scroll", updateActiveSectionFromScroll, { passive: true });
-  window.addEventListener("resize", updateActiveSectionFromScroll);
-  window.addEventListener("load", updateActiveSectionFromScroll);
-}
+  function requestActiveSectionUpdate() {
+    if (ticking) {
+      return;
+    }
+    ticking = true;
+    window.requestAnimationFrame(updateActiveSectionFromScroll);
+  }
 
-const revealElements = document.querySelectorAll("[data-reveal], .reports-spotlight-card, .card-panel");
-
-if (reduceMotion) {
-  revealElements.forEach((el) => {
-    el.classList.add("visible");
-  });
-} else {
-  revealElements.forEach((el, index) => {
-    el.classList.add("fade-in");
-    const stagger = Math.min((index % 8) * 70, 420);
-    el.style.transitionDelay = `${stagger}ms`;
-  });
-
-  const contactRevealGroup = document.querySelectorAll("#contact .section-heading, #contact .card-panel");
-  contactRevealGroup.forEach((el) => {
-    el.style.transitionDelay = "0ms";
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        } else {
-          entry.target.classList.remove("visible");
-        }
-      });
-    },
-    { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
-  );
-
-  revealElements.forEach((el) => observer.observe(el));
+  cacheSectionOffsets();
+  window.addEventListener("scroll", requestActiveSectionUpdate, { passive: true });
+  window.addEventListener("resize", cacheSectionOffsets);
+  window.addEventListener("load", cacheSectionOffsets);
 }
 
 const tiltCards = document.querySelectorAll("[data-tilt]");
 
 function resetTilt(card) {
-  card.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
+  card.style.setProperty("--tilt-x", "0deg");
+  card.style.setProperty("--tilt-y", "0deg");
+  card.classList.remove("tilt-card-active");
 }
 
-function applyTilt(card, event) {
-  const rect = card.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
-
+function applyTilt(card, rect, x, y) {
   const rotateY = ((x / rect.width) - 0.5) * 7;
   const rotateX = (0.5 - (y / rect.height)) * 6;
 
-  card.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+  card.style.setProperty("--tilt-x", `${rotateX.toFixed(2)}deg`);
+  card.style.setProperty("--tilt-y", `${rotateY.toFixed(2)}deg`);
 }
 
 if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
   tiltCards.forEach((card) => {
-    card.addEventListener("mousemove", (event) => applyTilt(card, event));
-    card.addEventListener("mouseleave", () => resetTilt(card));
+    let frame = null;
+    let rect = null;
+    let pointerX = 0;
+    let pointerY = 0;
+
+    // Performance: pointer movement is throttled to the next animation frame and reuses one rect per hover.
+    card.addEventListener("mouseenter", () => {
+      rect = card.getBoundingClientRect();
+      card.classList.add("tilt-card-active");
+    });
+
+    card.addEventListener("mousemove", (event) => {
+      if (!rect) {
+        rect = card.getBoundingClientRect();
+      }
+
+      pointerX = event.clientX - rect.left;
+      pointerY = event.clientY - rect.top;
+
+      if (frame) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(() => {
+        frame = null;
+        applyTilt(card, rect, pointerX, pointerY);
+      });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+        frame = null;
+      }
+      rect = null;
+      resetTilt(card);
+    });
   });
 }
 
