@@ -168,6 +168,50 @@
       margin-top: 5px;
     }
 
+    .scouting-profile-card {
+      padding: 14px 15px;
+      background:
+        linear-gradient(180deg, rgba(31, 143, 95, 0.045), rgba(255, 255, 255, 0)),
+        #ffffff;
+    }
+
+    .scouting-profile-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px 14px;
+      padding-left: 0 !important;
+      list-style: none;
+    }
+
+    .scouting-profile-list li {
+      position: relative;
+      padding-left: 14px;
+      color: #182234;
+      font-size: 0.9rem;
+      font-weight: 650;
+      line-height: 1.32;
+    }
+
+    .scouting-profile-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.58em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .reports-subheading {
+      margin: -4px 0 10px;
+      color: #64748b;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
     .report-item,
     .education-item {
       border: 1px solid var(--line);
@@ -373,6 +417,19 @@
         margin-top: 2px;
       }
 
+      .scouting-profile-card {
+        padding: 7px;
+      }
+
+      .scouting-profile-list {
+        gap: 3px 8px;
+      }
+
+      .scouting-profile-list li {
+        font-size: 0.68rem;
+        line-height: 1.2;
+      }
+
       .report-item,
       .education-item,
       .pill-list div,
@@ -436,14 +493,14 @@
   <div class="cv-shell">
     <section class="cv-hero">
       <div class="cv-hero-left">
-        <img src="images/profile.jpg" alt="Cal Botterill headshot" class="cv-avatar" />
+        <img src="images/profile-optimized.jpg" alt="Cal Botterill headshot" class="cv-avatar" />
         <div>
           <h1>Cal Botterill</h1>
-          <p class="cv-role">Football Scout &amp; Performance Analyst | Talent ID &amp; Tactical Profiling</p>
+          <p class="cv-role">Football Scout | Player Profiling • Talent Identification • Match Analysis</p>
           <p class="cv-intro">
-            Performance-driven football scout specialising in player evaluation, tactical analysis, and recruitment
-            profiling. Proven ability to translate match data and observations into clear, actionable insights for
-            coaches and decision-makers.
+            Football scout with experience producing player, match and opposition reports through live and video
+            observation. Skilled in player profiling, role suitability assessment and identifying technical, tactical,
+            physical and psychological attributes to support recruitment and performance decision-making.
           </p>
 
           <div class="cv-tags">
@@ -457,46 +514,39 @@
 
     <section class="cv-grid">
       <div class="cv-main">
-        <div class="cv-card">
-          <h3>Profile Summary</h3>
-          <p>
-            I analyse player and team performance to produce structured, role-specific scouting reports. My work combines
-            sports science principles with tactical understanding to support recruitment and performance decisions.
-          </p>
-        </div>
-
-        <div class="cv-card">
-          <h3>Scouting Focus</h3>
-          <ul>
-            <li>Player evaluation with role-specific profiling</li>
-            <li>Tactical and opposition analysis using structured frameworks</li>
-            <li>Recruitment profiling aligned with team model and game context</li>
-            <li>Clear performance communication for coaching staff</li>
-          </ul>
-        </div>
-
-        <div class="cv-card">
-          <h3>Key Strengths</h3>
-          <ul>
-            <li>Talent identification &amp; player profiling</li>
-            <li>Tactical analysis &amp; match breakdown</li>
-            <li>Data-informed decision making</li>
-            <li>Communication of performance insights</li>
-            <li>Football analytics &amp; scouting frameworks</li>
+        <div class="cv-card scouting-profile-card">
+          <h3>Core Scouting Areas</h3>
+          <ul class="scouting-profile-list">
+            <li>Player Assessment &amp; Profiling</li>
+            <li>Talent Identification</li>
+            <li>Match Analysis</li>
+            <li>Opposition Analysis</li>
+            <li>Recruitment Profiling</li>
+            <li>Written Reporting</li>
           </ul>
         </div>
 
         <div class="cv-card reports-card">
           <h3>Selected Reports</h3>
+          <p class="reports-subheading">Player Reports • Opposition Analysis • Match Reports</p>
 
           <div class="report-item">
             <h4>
-              Birmingham U18s vs Crystal Palace U18s
-              <a href="reports/birmingham-u18-vs-crystal-palace-u18-scouting-report.html" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
+              Man City U18s vs Derby U18s
+              <a href="reports/man-city-u18-vs-derby-county-u18-5-3-11-player-report.html" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
             </h4>
             <p>
-              Full match analysis including tactical structure, key patterns, and role-specific player evaluations with
-              actionable recommendations.
+              Eleven-player scouting report from a 5-3 U18 Premier League North fixture.
+            </p>
+          </div>
+
+          <div class="report-item">
+            <h4>
+              Arsenal U18s vs Crystal Palace U18s
+              <a href="reports/arsenal-u18-vs-crystal-palace-u18-2-3-player-report.html" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
+            </h4>
+            <p>
+              Eleven-player scouting report from a 3-2 U18 Premier League South fixture.
             </p>
           </div>
 
@@ -506,44 +556,41 @@
               <a href="reports/derby-county-women-scouting-report.html" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
             </h4>
             <p>
-              Live first-team scouting report with full 11-player evaluation, focusing on individual performance,
-              technical ability, physical profile, and decision-making.
+              Player-focused scouting report from a 2-1 FA Women's National League fixture.
             </p>
           </div>
 
           <div class="report-item">
             <h4>
               Liverpool Opposition Report
-              <a href="Liverpool Opposition Analysis pdf.pptx" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
+              <a href="reports/liverpool-opposition-report.html" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
             </h4>
             <p>
-              Opposition-focused analysis examining tactical structure, in-possession patterns, out-of-possession
-              behaviour, and potential match risks.
+              Pre-match opposition scouting report on Liverpool.
             </p>
           </div>
 
           <div class="report-item">
             <h4>
               Valentin Barco Three-Match Report
-              <a href="reports/valentin-barco-3-match-report.pdf" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
+              <a href="document-viewer.html?file=reports%2Fvalentin-barco-3-match-report.pdf&title=Valentin%20Barco%203%20Match%20Report" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
             </h4>
             <p>
-              Multi-match player assessment exploring role suitability, tactical impact, technical profile, and key
-              decision-making tendencies.
+              Three-match scouting report based on three live observations.
             </p>
           </div>
         </div>
 
         <div class="cv-card">
-          <h3>Product Work</h3>
+          <h3>Scouting Projects</h3>
           <div class="report-item">
             <h4>
               Founder, SquadIQ
               <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View SquadIQ</a>
             </h4>
             <p>
-              Designed and developed a football analysis platform enabling managers to track squad performance, analyse
-              players, and improve decision-making through structured data and match insights.
+              Developed SquadIQ, a scouting and squad management platform built from my own analysis workflow. Designed
+              to support player profiling, match preparation and recruitment assessment.
             </p>
           </div>
         </div>
@@ -552,12 +599,12 @@
       <aside class="cv-side">
         <div class="cv-card">
           <h3>Qualifications</h3>
-          <h4 class="mini-heading">PFSA</h4>
+          <h4 class="mini-heading">PFSA Qualifications</h4>
           <div class="pill-list">
-            <div>Talent Identification in Football (Level 2)</div>
-            <div>Technical Scouting in Football (Level 2)</div>
-            <div>Opposition Analysis in Football (Level 2)</div>
-            <div>Data Analysis in Football (Level 1)</div>
+            <div>Talent Identification</div>
+            <div>Technical Scouting</div>
+            <div>Opposition Analysis</div>
+            <div>Data Analysis</div>
           </div>
 
           <h4 class="mini-heading">Further Development</h4>
@@ -569,21 +616,31 @@
         </div>
 
         <div class="cv-card">
+          <h3>Software &amp; Tools</h3>
+          <div class="pill-list">
+            <div>Wyscout</div>
+            <div>Hudl</div>
+            <div>StatsBomb</div>
+            <div>Excel</div>
+            <div>SquadIQ</div>
+          </div>
+        </div>
+
+        <div class="cv-card">
           <h3>Education and Research</h3>
 
           <div class="education-item">
             <h4>BSc Sports Science</h4>
-            <p>Strong foundation in physiology, psychology, and performance analysis applied to football contexts.</p>
+            <p>Studied physiology, psychology, biomechanics and performance analysis, developing a broad understanding of athlete development and sporting performance.</p>
           </div>
 
           <div class="education-item">
-            <h4>BTEC Level 3 Sport</h4>
-            <p>Ninety-Credit and Extended Diploma pathway in sport performance and applied practical learning.</p>
+            <h4>BTEC Level 3 Extended Diploma in Sport</h4>
           </div>
 
           <div class="education-item">
             <h4>Dissertation</h4>
-            <p>Skills and Attributes Required by Football Clubs for Academy Graduates.</p>
+            <p>Skills &amp; Attributes Required by Football Clubs from Academy Graduates</p>
           </div>
         </div>
       </aside>

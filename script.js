@@ -34,14 +34,18 @@ function renderReports() {
       const actionMarkup = hasHref
         ? `<a href="${report.href}" target="_blank" rel="noopener noreferrer" class="report-button">View Report</a>`
         : `<span class="report-button report-button-disabled">Report Pending</span>`;
+      const featuredClass = report.featured ? " report-card-featured" : "";
+      const featuredMarkup = report.featured
+        ? `<span class="report-featured-label">Featured Report</span>`
+        : "";
 
       return `
-        <article class="report-card">
+        <article class="report-card${featuredClass}">
           <div class="report-image">
             ${mediaMarkup}
           </div>
           <div class="report-content">
-            <p class="report-label">${report.tag}</p>
+            <p class="report-label">${report.tag}${featuredMarkup}</p>
             ${report.when ? `<p class="report-date">${report.when}</p>` : ""}
             <h3 class="report-title">${report.title}</h3>
             <p class="report-description">${report.description}</p>
@@ -70,7 +74,6 @@ function renderLinkList(containerId, links) {
 }
 
 renderReports();
-renderLinkList("certificatesList", siteData.certificates);
 renderLinkList("foundationDocsList", siteData.foundationDocs);
 
 const menuToggle = document.getElementById("menuToggle");
@@ -376,12 +379,6 @@ function setupModal({ openId, modalId, closeId }) {
     }
   });
 }
-
-setupModal({
-  openId: "openCertificatesModal",
-  modalId: "certificatesModal",
-  closeId: "closeCertificatesModal"
-});
 
 setupModal({
   openId: "openFoundationDocsModal",

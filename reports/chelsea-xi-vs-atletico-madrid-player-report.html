@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scouting Report - Chelsea U16 vs Atlético Madrid U16</title>
+  <meta name="description" content="Chelsea U16 player scouting report from the U16 Messi Cup fixture against Atlético Madrid U16." />
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --accent: #034694;
+      --accent-strong: #001f5f;
+      --accent-soft: #eef5ff;
+      --bg-1: #020816;
+      --bg-2: #062b68;
+      --panel: #ffffff;
+      --ink-1: #111827;
+      --ink-2: #1f2937;
+      --muted: #475569;
+      --line: #d8e2f1;
+      --shadow: 0 22px 56px rgba(1, 18, 50, 0.34);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(3, 70, 148, 0.38), transparent 35%),
+        radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.12), transparent 31%),
+        linear-gradient(140deg, var(--bg-1) 0%, var(--bg-2) 100%);
+      color: var(--ink-1);
+      padding: 24px;
+    }
+
+    #report {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      background: var(--panel);
+      padding: 36px 40px 44px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow);
+    }
+
+    .top-line {
+      height: 8px;
+      background: linear-gradient(90deg, var(--accent-strong) 0%, var(--accent) 62%, #ffffff 100%);
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: "Barlow Condensed", "Inter", sans-serif;
+      font-size: clamp(2rem, 4vw, 2.55rem);
+      line-height: 1;
+      color: var(--ink-1);
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    .sub {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .meta-card {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+      padding: 11px 13px;
+      background: linear-gradient(150deg, #fbfdff, var(--accent-soft));
+    }
+
+    .label {
+      margin-bottom: 4px;
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .value {
+      color: var(--ink-1);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .match-image-wrap {
+      width: min(100%, 320px);
+      height: 330px;
+      justify-self: end;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.16);
+    }
+
+    .match-image-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 14px;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .section { margin-top: 22px; }
+
+    .section-title {
+      margin-bottom: 10px;
+      color: var(--ink-1);
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .summary-box {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      background: linear-gradient(145deg, #fbfdff, var(--accent-soft));
+      color: var(--ink-2);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .summary-box p {
+      margin: 0;
+    }
+
+    .summary-box p + p {
+      margin-top: 12px;
+    }
+
+    .players {
+      display: grid;
+      gap: 14px;
+    }
+
+    .team-heading {
+      margin: 22px 0 2px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.55px;
+    }
+
+    .player-card {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: 14px;
+      padding: 16px 16px 14px;
+      background: #fff;
+      page-break-inside: avoid;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    .player-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .player-main {
+      margin-right: 2px;
+      color: #111827;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .player-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 30px;
+      height: 30px;
+      padding: 0 9px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #111827;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .pill.blue {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .player-head .pill:nth-of-type(odd),
+    .player-head .pill.blue:nth-of-type(odd) {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .player-head .pill:nth-of-type(even),
+    .player-head .pill.blue:nth-of-type(even) {
+      background: #111827;
+      color: #fff;
+    }
+
+    .player-text {
+      color: var(--ink-2);
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
+    .player-text p {
+      margin: 0;
+    }
+
+    .player-text p + p {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 10px; }
+      #report { padding: 22px 14px 26px; border-radius: 12px; }
+      .header { grid-template-columns: 1fr; gap: 14px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .match-image-wrap { justify-self: start; }
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      #report {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 20px 24px 30px;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="report">
+    <div class="top-line"></div>
+
+    <div class="header">
+      <div class="title">
+        <h1>Player Match Report</h1>
+
+        <div class="meta-grid">
+          <div class="meta-card"><div class="label">Fixture</div><div class="value">Chelsea U16 vs Atlético Madrid U16</div></div>
+          <div class="meta-card"><div class="label">Competition</div><div class="value">U16 Messi Cup</div></div>
+          <div class="meta-card"><div class="label">Date & Time</div><div class="value">Tuesday 9 December 2025, 4:00 pm</div></div>
+          <div class="meta-card"><div class="label">Final Score</div><div class="value">4-2</div></div>
+          <div class="meta-card"><div class="label">Venue</div><div class="value">Chase Stadium, Fort Lauderdale, Florida, USA</div></div>
+          <div class="meta-card"><div class="label">Team Observed</div><div class="value">Chelsea U16</div></div>
+          <div class="meta-card"><div class="label">Scout</div><div class="value">Cal Botterill</div></div>
+        </div>
+      </div>
+
+      <div class="match-image-wrap">
+        <img src="../images/chelsea vs athletico madrid u16.jpg" alt="Chelsea U16 vs Atlético Madrid U16 match photo" width="398" height="502" />
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Match Overview</div>
+      <div class="summary-box">
+        <p>Chelsea U16 defeated Atlético Madrid U16 4-2 in their opening fixture of the U16 Messi Cup. Both sides lined up in a 4-3-3, with Chelsea building effectively from the back through intelligent movement, positional rotations and progressive line-breaking passes. Atlético Madrid remained compact without possession and looked to attack quickly in transition whenever opportunities arose.</p>
+        <p>Chelsea consistently progressed through Atlético Madrid's press to create dangerous attacking situations, while set plays proved a significant factor in the outcome, with three of their four goals coming from dead-ball situations. Atlético Madrid capitalised on isolated defensive lapses to remain competitive, but Chelsea's quality in possession and attacking cohesion enabled them to maintain control for large periods of the match.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Player Assessments</div>
+      <div class="players">
+        <div class="team-heading">Chelsea U16</div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">1</span><div class="player-main">Isaac Collinson</div><span class="pill">GK</span><span class="pill blue">Date of Birth 12 November 2009 (16)</span><span class="pill blue">Height approximately 5'11"</span><span class="pill blue">Right Foot</span></div>
+          <div class="player-text">
+            <p>Slim goalkeeper frame. Chelsea's build-up repeatedly flowed through Collinson, whose distribution was one of the standout individual aspects of the match. Exceptionally composed under pressure, he solved pressing situations through a wide variety of passing techniques, comfortably breaking lines with driven passes, clipped deliveries, pinpoint long balls and accurately weighted volleys into advanced areas. His confidence using either foot allowed him to manipulate pressure before finding teammates, while his movement to create new passing angles ensured he remained a reliable outlet during Chelsea's build-up. His execution with the ball was outstanding, displaying the confidence and technical ability to play virtually every type of distribution required.</p>
+            <p>His influence extended beyond possession. Collinson communicated constantly with those in front of him, organised teammates during defensive set plays and remained fully engaged regardless of his involvement. His shot-stopping was dependable, producing several key saves through sharp reactions, secure handling and good agility, particularly when dealing with crosses and second phases where he recovered quickly after initial interventions. He also swept effectively outside his penalty area, recognising danger early and positioning himself well to support Chelsea's defensive line.</p>
+            <p>The only notable concern came from a corner where his starting position left him too deep on his goal line, limiting his ability to attack the delivery before the eventual finish at the back post. Aside from that moment, Collinson's distribution repeatedly turned defensive situations into attacking opportunities. Rather than simply relieving pressure, he accelerated Chelsea's build-up and consistently provided his side with the platform to play through Atlético Madrid's press.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">2</span><div class="player-main">Gabriel Sambou</div><span class="pill">RB</span><span class="pill blue">Date of Birth 25 November 2009 (16)</span><span class="pill blue">Height approximately 5'9"</span><span class="pill blue">Right Foot</span></div>
+          <div class="player-text">
+            <p>Lean tall build. Sambou delivered a mixed performance, looking most effective when defending aggressively in direct duels rather than covering larger spaces behind the defensive line. He remained patient in 1v1 situations, stood his ground well and regularly prevented crosses without diving into challenges. His willingness to defend on the front foot also allowed him to intercept passes and regain possession before attacks could develop. However, this proactive approach occasionally became overcommitted, with a tendency to leave the defensive line too early and remove himself from the game if the initial challenge was bypassed.</p>
+            <p>The biggest concerns came during defensive transitions. Recovery pace, agility and body orientation limited his effectiveness when runners attacked the space in behind, while periods of flat-footedness and ball-watching allowed opponents to gain separation too easily. Tracking movement was inconsistent and his body language occasionally lacked urgency after turnovers. Despite these moments, he remained committed defensively until the final whistle, making several clearances, recoveries and an excellent late challenge to help Chelsea see out the game.</p>
+            <p>In possession, Sambou fulfilled a relatively disciplined role within Chelsea's structure, rarely looking to drive attacks himself. His distribution was generally simple and secure, although longer passes lacked accuracy and several ambitious attempts handed possession back unnecessarily. His standout attacking moment came from a cleverly timed back-post run at a set-piece, where he lost his marker before arriving unopposed to finish confidently. Improving his ability to defend space in behind would significantly strengthen an otherwise competitive, defence-minded full-back profile.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">3</span><div class="player-main">Isaac Silva</div><span class="pill">RCB</span><span class="pill blue">Date of Birth 4 April 2011 (14)</span><span class="pill blue">Height approximately 5'10"</span><span class="pill blue">Right Foot</span></div>
+          <div class="player-text">
+            <p>Powerful athletic build. Silva delivered an assured display, combining composure in possession with an aggressive, front-footed approach to defending. Exceptionally comfortable receiving under pressure, he looked to progress play himself rather than simply recycle possession. He carried the ball confidently out of defence, using his strength and close control to eliminate the first line of pressure before finding teammates, while also displaying an impressive passing range through clipped deliveries into the striker and accurate switches of play. His willingness to take responsibility in possession repeatedly helped Chelsea advance the ball from deep.</p>
+            <p>Defensively, Silva played with confidence and authority, stepping in aggressively to regain possession and backing his recovery pace when defending larger spaces. He judged several situations well, competed strongly in aerial duels and produced a number of decisive defensive actions, including a last-ditch interception, a brave headed block and well-timed tackles after covering behind his defensive partner. His proactive style, athleticism and composure allowed him to defend on the front foot without looking rushed or panicked.</p>
+            <p>There were, however, occasions where that aggression became overcommitted. At times he stepped out of the defensive line too early in an attempt to win possession, leaving space behind if the challenge was bypassed. There were also a couple of moments where ball-watching from wide areas and body orientation inside the penalty area allowed attackers to gain a positional advantage. Nevertheless, Silva never lost confidence, continually demanding possession and showing the personality to influence the game both defensively and during Chelsea's build-up.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">4</span><div class="player-main">Emmanuel Ayinde</div><span class="pill">LCB</span><span class="pill blue">Date of Birth 13 November 2009 (16)</span><span class="pill blue">Height approximately 5'10"</span><span class="pill blue">Left Foot</span></div>
+          <div class="player-text">
+            <p>Powerful athletic build. Ayinde looked to play on the front foot whenever possible, showing the confidence to break opposition lines rather than settling for safer options. His left foot brought natural balance to Chelsea's build-up, with several well-executed passes into midfield and wide areas helping his side progress through pressure. Comfortable receiving under pressure, he remained composed in possession and was willing to play through tight spaces when opportunities presented themselves. He also read the game well, reacting quickly to loose balls and stepping in to regain possession before attacks could develop.</p>
+            <p>His athleticism allowed Chelsea to defend aggressively. Ayinde covered space effectively, repeatedly recovering behind teammates and showing the pace to deal with balls played into wider areas. His contribution in the opposition penalty area also proved decisive, reacting quickest from a corner to convert the rebound after remaining alert inside the six-yard box.</p>
+            <p>The biggest concern came from moments of concentration. A lapse in concentration when shielding the ball near the corner flag directly led to Atlético Madrid's opening goal, while several unforced passes from deep surrendered possession despite little pressure being applied. To his credit, he responded well after mistakes and never became reluctant to receive possession. Reducing these avoidable errors would significantly strengthen an otherwise encouraging performance.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">5</span><div class="player-main">Jacob Dako</div><span class="pill">LB</span><span class="pill blue">Date of Birth 12 December 2010 (14)</span><span class="pill blue">Height approximately 5'6"</span><span class="pill blue">Left Foot</span></div>
+          <div class="player-text">
+            <p>Smaller, strong lean athletic build. Dako's movement was one of the standout features of his performance, repeatedly placing himself in advanced positions to support Chelsea's attacks. He consistently provided excellent width down the left flank, timing overlapping runs intelligently and offering a constant outlet during build-up. His positioning, both in and out of possession, was well judged, allowing him to anticipate danger, recover loose balls and provide effective defensive cover when required. He also contributed several valuable defensive moments, including an excellent back-post block, multiple aerial victories and intelligent covering inside the penalty area.</p>
+            <p>His athleticism enabled him to carry possession through challenges and advance play from deeper areas, but the final action often failed to match the quality of his movement. Despite repeatedly arriving in promising crossing positions, his delivery lacked consistency, while an inconsistent first touch occasionally prevented him from attacking open space after receiving switch passes. A heavy reliance on his stronger left foot also limited his ability to escape pressure in tighter areas, and he rarely looked confident taking on defenders in isolated 1v1 situations.</p>
+            <p>There were also aspects of his defending that require refinement. Although his overall positioning was generally strong, he could be beaten too easily in individual duels, with his body orientation occasionally allowing attackers to shift inside onto their stronger foot. Nevertheless, Dako repeatedly demonstrated the intelligence to arrive in the right areas at the right time. Improving the technical execution of his final actions would significantly elevate a profile built upon excellent movement, defensive awareness and athleticism.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">6</span><div class="player-main">Reggie Watson</div><span class="pill">CM</span><span class="pill blue">Date of Birth 26 January 2010 (15)</span><span class="pill blue">Height approximately 5'10"</span><span class="pill blue">Right Foot</span></div>
+          <div class="player-text">
+            <p>Tall, mature build. Watson delivered a deserved man-of-the-match performance, looking every bit a complete central midfielder through his ability to dictate the game in every phase. Constantly scanning before receiving, he created space for himself before playing on the half-turn, allowing Chelsea to progress attacks through forward-thinking passes, intelligent ball carrying and well-executed switches of play. He continually offered himself as a passing option, controlling the tempo with an excellent understanding of when to speed play up and when to retain possession. His passing range was outstanding, ranging from disguised passes through pressure to clipped deliveries into wide areas, while his positive mindset in possession repeatedly drove Chelsea onto the front foot.</p>
+            <p>Without possession, Watson was just as influential. He screened the back line intelligently, recognised danger early and competed aggressively in duels, using his upper-body strength and excellent tackling technique to win the ball cleanly. His leadership was evident throughout, constantly organising teammates, demanding high standards and setting the tone with both his attitude and work rate. Defensively, he matched his technical quality with intensity, leading by example through his aggression, commitment and relentless desire to regain possession.</p>
+            <p>His quality from dead-ball situations further underlined an exceptional display. He first struck a free-kick against the underside of the crossbar, allowing Chelsea to react first to the rebound, before later bending a superb free-kick into the far corner with outstanding technique and precision. There were only minor blemishes on an otherwise outstanding performance. Agility over shorter distances appeared slightly limited, while one misplaced pass presented Atlético Madrid with a dangerous opportunity. His competitive edge also occasionally tipped into rashness, resulting in a late booking. Even so, Watson dictated the rhythm of the match through his football intelligence, leadership and technical excellence, producing the outstanding individual performance of the game.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">8</span><div class="player-main">Mahdi Nicoll-Jazuli</div><span class="pill">CM</span><span class="pill blue">Date of Birth 6 January 2010 (15)</span><span class="pill blue">Height approximately 5'10"</span><span class="pill blue">Right Foot</span></div>
+          <div class="player-text">
+            <p>Tall average build. Nicoll-Jazuli delivered a dynamic midfield performance, influencing the game through his energy, movement and willingness to take responsibility in possession. Constantly available to receive the ball, he covered large areas of the pitch and played with a positive mentality, always looking to advance Chelsea rather than settling for safer options. His vision was evident whenever opportunities presented themselves, threading disguised passes, well-weighted through balls and accurate switches of play, while his assured first touch allowed him to receive under pressure and play forward with minimal delay. He also timed his forward runs intelligently, arriving in advanced areas to provide an additional attacking threat from midfield.</p>
+            <p>Without the ball, Nicoll-Jazuli maintained the same intensity. He tracked runners diligently, competed aggressively in midfield duels and used his physicality well to regain possession and disrupt opposition attacks. Following Watson's substitution, he embraced greater responsibility by dropping into deeper areas to help orchestrate Chelsea's build-up, while continuing to offer himself as a passing option and connect different phases of play. His work rate and desire to remain involved never dropped, allowing him to influence the game across the full length of the pitch.</p>
+            <p>Only minor improvements were evident. His opening touch of the match was unusually loose and he was beaten too easily during one early pressing action. Beyond those isolated moments, he produced a mature all-round display, combining athleticism, technical security and tactical intelligence. His versatility and ability to contribute at both ends of the pitch suggest a midfielder capable of performing a variety of central roles to a high level.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">10</span><div class="player-main">Isaac McGillvary</div><span class="pill">CAM</span><span class="pill blue">Date of Birth Unverified (15)</span><span class="pill blue">Height approximately 5'7"</span><span class="pill blue">Both Feet</span></div>
+          <div class="player-text">
+            <p>Smaller type build. McGillvary was one of Chelsea's most technically accomplished players, looking completely at ease receiving possession in advanced areas regardless of pressure. He regularly occupied intelligent pockets between the opposition's midfield and defensive lines, while also drifting towards the left flank to combine with the winger and create new passing angles during Chelsea's build-up. His first touch was exceptional, repeatedly receiving on the half-turn before manipulating the ball away from pressure with composure and precision. Equally comfortable using either foot, he showcased outstanding close control through clever turns, an audacious flick over an opponent and several pieces of skill that allowed Chelsea to sustain attacking momentum.</p>
+            <p>Whenever McGillvary became involved, attacks appeared to gather rhythm. Rather than forcing difficult actions, he patiently committed defenders before releasing teammates with well-timed passes and linked play intelligently around the edge of the penalty area. He also worked hard without possession, pressing with purpose and recovering the ball whenever opportunities presented themselves.</p>
+            <p>Only minor improvements were evident. On a couple of occasions he delayed releasing the ball, allowing promising transitions to lose momentum. Aside from those moments, he produced a highly polished technical display. Given the level of composure, manipulation and decision-making he displayed, McGillvary looks capable of having an even greater influence on matches where he sees more of the ball, possessing all the attributes to become a genuine creative focal point in the final third.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">7</span><div class="player-main">Trey Faromo-Adebayo</div><span class="pill">RW</span><span class="pill blue">Date of Birth 16 October 2010 (15)</span><span class="pill blue">Height approximately 5'9"</span><span class="pill blue">Right Foot</span></div>
+          <div class="player-text">
+            <p>Lean athletic build. Faromo-Adebayo provided a constant outlet down Chelsea's right flank through his intelligent movement and willingness to attack space. He regularly looked to run beyond his full-back, timing his movements well to stretch Atlético Madrid's defensive line and receive in advanced areas. As the game opened up, his pace became an increasingly dangerous weapon, with several well-timed runs in behind creating promising attacking opportunities. His awareness in the final third also stood out, producing an excellent reverse pass, a perfectly weighted through ball for the striker and a dangerous cut-back across the six-yard box that created an open goalscoring opportunity which should have been converted. His ability to recognise forward runs and deliver into dangerous areas made him one of Chelsea's primary creative threats from wide positions.</p>
+            <p>When isolated against defenders, Faromo-Adebayo demonstrated the ability to attack on either side, making him difficult to read in 1v1 situations. However, his end product fluctuated over the course of the match. There were spells where hesitation in possession allowed defenders to recover, while an inconsistent first touch occasionally prevented him from taking advantage of promising situations. Although flashes of real attacking quality were evident, he found it difficult to impose himself for sustained periods.</p>
+            <p>His defensive contribution also varied. While he recovered willingly and remained prepared to compete, there were several occasions where his direct opponent advanced too easily down his side. Becoming more decisive in possession and developing greater resilience in defensive duels would add another level to an already exciting attacking profile built around pace, movement and chance creation.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">11</span><div class="player-main">Heze Grimwade</div><span class="pill">LW</span><span class="pill blue">Date of Birth 18 June 2010 (15)</span><span class="pill blue">Height approximately 5'6"</span><span class="pill blue">Right Foot</span></div>
+          <div class="player-text">
+            <p>Small, lean athletic build. Grimwade knitted Chelsea's attacks together with intelligent movement and an excellent understanding of space. Rather than remaining fixed to the touchline, he regularly drifted into inside areas to receive on the half-turn before linking play or releasing runners beyond the defensive line. His relationship with Chelsea's left-back was particularly effective, timing combinations and overlaps well to create overloads and open passing lanes. His movement between the lines ensured he remained a constant option whenever Chelsea progressed possession into the final third.</p>
+            <p>Technically, Grimwade was one of Chelsea's cleanest attackers in possession. Comfortable receiving under pressure, he displayed an excellent first touch and looked equally capable using either foot. His ability to spot forward runs and execute well-weighted through balls repeatedly placed teammates in dangerous positions, while his confidence to attempt disguised passes, clever backheels and other inventive combinations highlighted both his imagination and technical ability. His attacking instincts were rewarded with a goal, reacting quickest to a free-kick rebound to arrive unmarked and head home from close range.</p>
+            <p>Out of possession, Grimwade matched his attacking quality with an excellent work ethic, recovering willingly and competing despite his relatively slight frame. He never shied away from defensive responsibilities and regularly tracked runners to support his full-back. Only a handful of his more ambitious creative attempts failed to come off, but his willingness to attempt difficult actions was largely justified by the number of opportunities he created. Grimwade's intelligence, combination play and technical security made him one of Chelsea's most effective attacking players.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head"><span class="player-number">9</span><div class="player-main">Andrew Pennie</div><span class="pill">ST</span><span class="pill blue">Date of Birth 3 November 2009 (16)</span><span class="pill blue">Height approximately 5'10"</span><span class="pill blue">Right Foot</span></div>
+          <div class="player-text">
+            <p>Strong athletic build. Pennie provided Chelsea with an outstanding focal point, combining intelligent hold-up play with relentless work rate and selfless movement. He regularly dropped away from the defensive line to receive possession, using his upper-body strength and clever body positioning to protect the ball before bringing teammates into play. His first touch was consistently assured, allowing him to control difficult deliveries and link attacks through sharp lay-offs and first-time combinations. Whether receiving with defenders tight to him or competing for direct balls, Pennie gave Chelsea a reliable platform to build from.</p>
+            <p>His movement away from the ball was another major strength. He intelligently drifted into wider areas to create new passing angles before arriving back into central positions to support attacks. Around the penalty area he looked to receive on the turn whenever possible, using subtle body movements to create separation from defenders. He also displayed flashes of ingenuity, including an excellent disguised roll through his legs before progressing play, while his ability to carry possession forward and release teammates showed he was far more than a penalty-box striker.</p>
+            <p>Pennie's commitment without the ball was equally outstanding. He repeatedly recovered into defensive areas and produced one of the defining moments of the match, making a superb last-ditch tackle during an Atlético Madrid counter-attack to deny a clear goalscoring opportunity. He also battled tirelessly against the opposition centre-backs, winning numerous fouls from direct play and allowing Chelsea to establish territory higher up the pitch. Although clear shooting opportunities were limited, his influence on the team's overall performance extended far beyond goals, with his physical presence, link play and willingness to work for the team making him an invaluable reference point throughout the match.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two-Team Scouting Report - Arsenal U18s vs Crystal Palace U18s</title>
+  <meta name="description" content="Two-team player scouting report from Arsenal U18s vs Crystal Palace U18s in a 2-3 U18 Premier League fixture." />
+  <link rel="icon" href="../favicon-32.png?v=20260410-3" type="image/png" sizes="32x32" />
+  <link rel="icon" href="../favicon.svg?v=20260410-3" type="image/svg+xml" />
+  <link rel="shortcut icon" href="../favicon-32.png?v=20260410-3" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --accent: #e30613;
+      --accent-dark: #b4000f;
+      --accent-soft: #fff1f2;
+      --bg-1: #170405;
+      --bg-2: #2a070a;
+      --ink-1: #111827;
+      --ink-2: #1f2937;
+      --muted: #475569;
+      --line: #e5d3d6;
+      --shadow: 0 18px 42px rgba(20, 0, 4, 0.28);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 14% 10%, rgba(227, 6, 19, 0.24), transparent 34%),
+        radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.1), transparent 32%),
+        linear-gradient(140deg, var(--bg-1) 0%, var(--bg-2) 100%);
+      color: var(--ink-1);
+      padding: 24px;
+    }
+
+    #report {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      background: #fff;
+      padding: 36px 40px 44px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .top-line {
+      height: 8px;
+      background: linear-gradient(90deg, #111827 0%, var(--accent-dark) 42%, var(--accent) 100%);
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 24px;
+    }
+
+    .title h1 {
+      margin: 0 0 8px 0;
+      font-family: "Barlow Condensed", "Inter", sans-serif;
+      font-size: clamp(2rem, 4vw, 2.45rem);
+      line-height: 1;
+      color: var(--ink-1);
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    .title .sub {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 7px;
+    }
+
+    .meta-card {
+      border: 1px solid rgba(17, 24, 39, 0.11);
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      padding: 8px 10px;
+      background: #fff;
+      box-shadow: 0 5px 14px rgba(15, 23, 42, 0.055);
+    }
+
+    .meta-card .label {
+      font-size: 9px;
+      color: #6b7280;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.72px;
+      margin-bottom: 3px;
+    }
+
+    .meta-card .value {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--ink-1);
+      line-height: 1.25;
+    }
+
+    .match-image-wrap {
+      width: min(100%, 340px);
+      aspect-ratio: 1 / 1;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.16);
+      justify-self: end;
+    }
+
+    .match-image-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 1px solid var(--line);
+      object-fit: cover;
+      object-position: right center;
+    }
+
+    .section { margin-top: 22px; }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--ink-1);
+      border-bottom: 3px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      letter-spacing: 0.65px;
+    }
+
+    .summary-box {
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, #fffafa, var(--accent-soft));
+      border-radius: 14px;
+      padding: 16px 18px;
+      line-height: 1.65;
+      font-size: 14.5px;
+      color: #2f1f22;
+    }
+
+    .summary-box p {
+      margin: 0;
+    }
+
+    .summary-box p + p {
+      margin-top: 12px;
+    }
+
+    .players {
+      display: grid;
+      gap: 14px;
+    }
+
+    .team-heading {
+      margin: 22px 0 2px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.55px;
+    }
+
+    .team-heading.palace {
+      background: #1b458f;
+      border-left: 8px solid #c41230;
+    }
+
+    .player-card {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: 14px;
+      padding: 16px 16px 14px;
+      background: #fff;
+      page-break-inside: avoid;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    .player-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .player-main {
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+      margin-right: 2px;
+    }
+
+    .player-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 30px;
+      height: 30px;
+      padding: 0 9px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #111827;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .pill.red {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .player-card.palace .player-main {
+      color: #111827;
+    }
+
+    .player-card.palace .player-number {
+      background: #1b458f;
+    }
+
+    .player-card .player-head .pill:nth-of-type(odd),
+    .player-card .player-head .pill.red:nth-of-type(odd) {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .player-card .player-head .pill:nth-of-type(even),
+    .player-card .player-head .pill.red:nth-of-type(even) {
+      background: #111827;
+      color: #fff;
+    }
+
+    .player-card.palace {
+      border-left-color: #1b458f;
+    }
+
+    .player-card.palace .player-head .pill:nth-of-type(odd),
+    .player-card.palace .player-head .pill.red:nth-of-type(odd) {
+      background: #c41230;
+      color: #fff;
+    }
+
+    .player-card.palace .player-head .pill:nth-of-type(even),
+    .player-card.palace .player-head .pill.red:nth-of-type(even) {
+      background: #1b458f;
+      color: #fff;
+    }
+
+    .player-text {
+      font-size: 14px;
+      line-height: 1.68;
+      color: var(--ink-2);
+    }
+
+    .player-text p {
+      margin: 0;
+    }
+
+    .player-text p + p {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 980px) {
+      body { padding: 12px; }
+      #report { padding: 22px 14px 26px; border-radius: 12px; }
+      .header { grid-template-columns: 1fr; gap: 14px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .match-image-wrap { justify-self: start; }
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      #report {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 20px 24px 30px;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="report">
+    <div class="top-line"></div>
+
+    <div class="header">
+      <div class="title">
+        <h1>Player Match Report</h1>
+
+        <div class="meta-grid">
+          <div class="meta-card">
+            <div class="label">Fixture</div>
+            <div class="value">Arsenal U18s vs Crystal Palace U18s</div>
+          </div>
+          <div class="meta-card">
+            <div class="label">Competition</div>
+            <div class="value">U18 Premier League</div>
+          </div>
+          <div class="meta-card">
+            <div class="label">Date & Time</div>
+            <div class="value">Tue 28 April 2026, 12:00</div>
+          </div>
+          <div class="meta-card">
+            <div class="label">Final Score</div>
+            <div class="value">2-3</div>
+          </div>
+          <div class="meta-card">
+            <div class="label">Venue</div>
+            <div class="value">Sobha Realty Training Centre</div>
+          </div>
+          <div class="meta-card">
+            <div class="label">Scout</div>
+            <div class="value">Cal Botterill</div>
+          </div>
+          <div class="meta-card">
+            <div class="label">Teams Observed</div>
+            <div class="value">Arsenal U18s and Crystal Palace U18s</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="match-image-wrap">
+        <img src="../images/Photo arsenal vs Palace.png" alt="Arsenal U18s vs Crystal Palace U18s match photo" width="858" height="498" />
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Match Overview</div>
+      <div class="summary-box">
+        <p>Arsenal U18s were beaten 3-2 by Crystal Palace U18s in an open U18 Premier League fixture at Sobha Realty Training Centre. Arsenal looked to control the game through patient build-up from the goalkeeper, using inverted full-back movements and technical combinations in midfield to progress possession and create overloads between the lines. Although they produced several positive attacking sequences, defensive lapses and vulnerability from set plays proved costly in decisive moments.</p>
+        <p>Crystal Palace defended in a compact back four out of possession before regularly transitioning into a back three during build-up, with the right-back moving inside as a third centre-back and the left-back advancing high as a wing-back. This structure allowed them to retain possession effectively while creating width on the left. Palace combined composed build-up with quick attacking transitions and strong second-ball play, ultimately proving more clinical in front of goal to secure the victory.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Both-Team Player Assessments</div>
+      <div class="players">
+        <div class="team-heading">Arsenal U18s</div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">1</span>
+            <div class="player-main">Lupinski</div>
+            <span class="pill">GK</span>
+            <span class="pill red">Date of Birth 3 April 2010 (16)</span>
+            <span class="pill red">Height approximately 5'11"</span>
+            <span class="pill red">Left Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Average goalkeeper frame. Build-up goalkeeper who looked most comfortable contributing during possession phases and supporting Arsenal's progression. Displayed confidence receiving under pressure and regularly invited opposition before playing through opposition lines, consistently finding midfielders, full-backs and forwards through short and medium-range distribution. Composed in possession and trusted by teammates as a build-up outlet. Shot-stopping was dependable throughout, producing several reaction saves and remaining patient in 1v1 situations, narrowing angles effectively rather than committing early. Sweeping actions outside the penalty area were generally well judged and demonstrated good anticipation of danger and developing attacks.</p>
+            <p>Long-range distribution lacked consistency, with several kicks failing to find their target and limiting Arsenal's ability to progress directly when pressed. Aerial command remains below the level of his build-up play and stronger positioning may have prevented the goal conceded from a set-play delivery. Command of aerial situations was occasionally inconsistent, including a punch from a corner that lacked conviction. Handling quality was difficult to fully assess, although there were moments where stronger decisions between catching and parrying may have reduced risk. Best suited to possession-oriented structures where his composure and technical security can be maximised. The key developmental question is whether his aerial command and handling can improve enough to complement an otherwise strong possession-based goalkeeping profile.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">2</span>
+            <div class="player-main">Sampang</div>
+            <span class="pill">RB</span>
+            <span class="pill red">Date of Birth 1 October 2008 (17)</span>
+            <span class="pill red">Height approximately 5'9"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Lean build. Technically gifted full-back who operated predominantly as an inverted right-back whilst in possession, often becoming a roaming right-sided midfielder to support build-up phases. Particularly impressive was his ability to balance the responsibilities of an inverted full-back role with traditional defensive duties. Frequently operating in central midfield and attacking midfield spaces during possession, he still recovered effectively and maintained defensive structure when transitions occurred. Combined intelligently with both interior midfielders and wide players and regularly manipulated opponents through his positioning and passing choices before progressing play.</p>
+            <p>Looked extremely comfortable receiving on the half-turn and demonstrated strong awareness of surrounding pressure, allowing him to link play effectively through quick combinations and intelligent decision-making. His first touch was consistently secure and enabled him to receive in congested areas without disrupting Arsenal's attacking rhythm, while he also showed confidence using his weaker foot when required. Although scanning actions were not always clearly visible, he consistently appeared aware of teammate and opponent positioning before receiving possession. Showed resilience following mistakes and consistently demonstrated courage to receive possession in difficult areas.</p>
+            <p>Despite a relatively small frame, he competed aggressively in both aerial and ground duels and regularly relied on positioning and anticipation rather than physical dominance. Defensively, he appeared most effective when reading situations early and intercepting danger before recovery actions became necessary. More effective defending through anticipation than physical recovery, with explosive wide players occasionally able to expose him in open spaces. Technical execution became less consistent as the game progressed, potentially linked to physical fatigue.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">4</span>
+            <div class="player-main">Hamil</div>
+            <span class="pill">RCB</span>
+            <span class="pill red">Date of Birth 8 April 2010 (16)</span>
+            <span class="pill red">Height approximately 5'11"</span>
+            <span class="pill red">Left Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Compact athletic build. Athletic left-footed centre-back operating on the right side who looked most comfortable defending aggressively on the front foot. Possesses the mobility and recovery pace required to defend large spaces when Arsenal committed numbers forward. Defensively, he attacked first contacts, anticipated danger early and showed excellent timing in both aerial and ground duels. Produced several high-value interventions through anticipation and recovery defending, including an outstanding goal-line clearance that highlighted both his athleticism and defensive awareness. Also displayed a strong understanding of covering responsibilities, regularly providing support for both his fellow centre-back and full-back when defensive rotations were required.</p>
+            <p>Particularly impressive was his composure under pressure. Rarely looked rushed in possession and consistently showed good judgement regarding when to carry, pass or release the ball. Comfortable carrying possession, he regularly looked to play forward and progress attacks rather than selecting the safest option available. Demonstrated the confidence to break lines through progressive passes rather than simply recycling play.</p>
+            <p>Leadership and communication remain areas requiring further observation, although he appeared comfortable taking responsibility during key moments. Long-range distribution remains less refined than his shorter passing game.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">5</span>
+            <div class="player-main">Stachow</div>
+            <span class="pill">LCB</span>
+            <span class="pill red">Date of Birth 1 March 2009 (17)</span>
+            <span class="pill red">Height approximately 6'2"</span>
+            <span class="pill red">Left Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Powerful centre-back frame. Defensive-minded centre-back whose strongest qualities lie in positioning, anticipation and protecting dangerous areas. Physically competitive and aggressive in duels, he consistently attacked aerial balls and looked comfortable defending crosses and direct play. Reads danger early and relies more on anticipation than recovery speed to solve defensive problems. Showed a willingness to put his body on the line through blocks, tackles and emergency interventions, reflecting a strong defensive mentality. Frequently stepped forward to engage attackers and showed good judgement regarding when situations required a clearance and when possession could be retained.</p>
+            <p>In possession, he was capable of contributing to build-up phases but appeared less comfortable receiving under pressure than his centre-back partner, often favouring security over progression when pressed aggressively. Distribution was mixed, with shorter passing generally reliable but progressive and longer-range passing lacking consistency.</p>
+            <p>Regularly took responsibility during key defensive moments and appeared willing to lead through actions rather than communication. Concentration levels occasionally fluctuated and contributed to several costly defensive situations due to poor awareness of opposition attackers. However, his response to setbacks was positive, becoming more assertive in defensive actions after difficult moments rather than retreating into his shell.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">3</span>
+            <div class="player-main">Mbala</div>
+            <span class="pill">LB</span>
+            <span class="pill red">Date of Birth 1 February 2009 (17)</span>
+            <span class="pill red">Height approximately 6'0"</span>
+            <span class="pill red">Left Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Powerful athletic build. Powerful modern full-back with the athletic tools required to impact both attacking and defensive phases. Possesses excellent acceleration and looked extremely comfortable in possession. Confident receiving under pressure and driving into midfield spaces when opportunities arose, while his combination of pace, power and balance made him difficult to stop in open space.</p>
+            <p>Particularly impressive was his decision-making in possession. He recognised the correct moments to release the ball and when continued carrying could create a greater advantage for his team. His movement into central areas was intelligent and he regularly underlapped into advanced positions, creating additional options during build-up and attacking transitions. Teammates also appeared comfortable using him as an outlet when under pressure.</p>
+            <p>Defensively, he was proactive in duels and showed the recovery speed to deal with most situations, while also displaying the strength to protect possession and win fouls when required. At times his desire to engage opponents early left him vulnerable against particularly quick or unpredictable attackers, while a lapse in concentration late in the match contributed to a goal-scoring opportunity for the opposition. Leadership qualities remain difficult to assess from this viewing. Nevertheless, he possesses many of the attributes associated with a modern attacking full-back and appears well suited to systems that encourage aggressive overlapping and underlapping support.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">6</span>
+            <div class="player-main">Murisa</div>
+            <span class="pill">RCM</span>
+            <span class="pill red">Date of Birth 21 March 2009 (17)</span>
+            <span class="pill red">Height approximately 5'11"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Strong athletic midfielder. Powerful box-to-box midfielder with a strong engine who covered significant ground, consistently contributing in both defensive and attacking phases, often arriving first to second balls and winning physical contests. Demonstrated a good understanding of screening responsibilities and passing lane coverage, providing defensive balance within Arsenal's midfield structure.</p>
+            <p>In possession, generally kept the game moving efficiently while showing the ability to break lines through carries and release runners when opportunities developed. First touch was reliable, while regularly using his body well to protect possession before progressing play. Combination play remained simple rather than expansive, but productive in maintaining attacking momentum.</p>
+            <p>Competitive mentality stood out throughout, reacting positively to setbacks and consistently looking to influence the game. Body orientation when receiving could improve, with a more open shape potentially allowing quicker and more consistent forward play.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">8</span>
+            <div class="player-main">Julienne</div>
+            <span class="pill">LCM</span>
+            <span class="pill red">Date of Birth 20 January 2008 (18)</span>
+            <span class="pill red">Height approximately 5'10½"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Lean technical build. Technically gifted deep-lying playmaker who constantly demanded the ball and demonstrated exceptional composure under pressure, regularly receiving in congested central areas and escaping pressure through body positioning, awareness and technical security. Vision was a standout attribute, consistently identifying progressive passing opportunities before they developed and manipulating opponents through disguised distribution and movement. Comfortable using either foot, allowing progression from multiple angles.</p>
+            <p>Operated as the focal point of Arsenal's possession play, regularly dictating tempo through intelligent decision-making. Leadership qualities were evident through both communication and a willingness to assume responsibility during key moments, with much of Arsenal's possession structure flowing through him. Regularly gravitated towards left-sided areas where he combined effectively with teammates to create overloads and progress attacks.</p>
+            <p>Influences games through technical quality, composure and football intelligence rather than physical dominance. Possesses a competitive edge and responded positively to setbacks throughout the match, although stronger opponents may occasionally outmatch him physically. Nevertheless, he compensates through press resistance and an ability to control matches in possession.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">10</span>
+            <div class="player-main">Marciniak</div>
+            <span class="pill">CAM</span>
+            <span class="pill red">Date of Birth 10 April 2008 (18)</span>
+            <span class="pill red">Height approximately 5'8"</span>
+            <span class="pill red">Left Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Small athletic build. Creative attacking midfielder who consistently found pockets of space between opposition units and acted as a key link between midfield and attack. An agile mover with excellent balance in tight spaces, he looked comfortable receiving under pressure and demonstrated the technical quality required to operate effectively in congested central areas. His first touch was particularly impressive, regularly allowing him to receive cleanly and progress attacks. Showed good scanning and awareness prior to receiving possession, helping him identify pressure and play forward quickly when opportunities emerged.</p>
+            <p>Movement was a standout feature of his performance. Consistently manipulated opponents through intelligent positioning, creating passing angles for teammates and finding spaces defenders struggled to track. Showed creativity through dribbling in wide areas, clipped deliveries and combination play around the edge of the penalty area. More influential as a creator than a direct goalscorer, although he showed a willingness to shoot when opportunities arose.</p>
+            <p>Competitiveness was evident throughout, particularly during pressing situations and contested moments, where he worked aggressively without possession. His pressing intensity and desire to regain possession added further value to an already impressive creative profile.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">7</span>
+            <div class="player-main">Louis Zečević-John</div>
+            <span class="pill">RW</span>
+            <span class="pill red">Date of Birth 21 September 2008 (17)</span>
+            <span class="pill red">Height approximately 5'10"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Compact, well-built frame. Competitive wide forward who combines work rate, physicality and technical quality. Contributed consistently without possession, tracking runners diligently and showing a strong understanding of defensive responsibilities from wide areas. In possession, he was comfortable carrying the ball, dribbling past opponents and protecting possession under pressure, while also bringing teammates into play through effective hold-up work. First touch was consistently secure, allowing him to receive cleanly in both central and wide areas before progressing attacks.</p>
+            <p>Possesses good acceleration and directness, while also competing exceptionally well aerially for a wide player, highlighted by his headed goal from a corner. Offered a level of aerial presence not typically associated with wide forwards and played with visible confidence throughout. Emotional control occasionally impacted concentration after decisions went against him.</p>
+            <p>Questions remain regarding his overall finishing profile beyond his aerial goal threat, as opportunities to fully assess his shooting ability were limited during this viewing. Nevertheless, he demonstrated many of the qualities associated with a modern wide forward capable of contributing effectively in and out of possession.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">9</span>
+            <div class="player-main">O'Neil</div>
+            <span class="pill">ST</span>
+            <span class="pill red">Date of Birth 11 January 2008 (18)</span>
+            <span class="pill red">Height approximately 5'9"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Lean striker build. Technical centre-forward whose game revolves around movement, combination play and intelligent use of attacking spaces. Possesses a slighter build and is more effective linking play than operating with his back to goal. Most comfortable receiving to feet and connecting attacks through quick combinations rather than acting as a traditional target man. Demonstrated a good first touch and the ability to turn away from pressure.</p>
+            <p>Movement in and around the penalty area was a standout feature of his performance. Regularly created opportunities for both himself and teammates, manipulating defenders through a mix of runs in behind and deeper movements towards the ball. Particularly effective at using double movements inside the penalty area, initially moving away from defenders before quickly attacking space to create separation.</p>
+            <p>Physical duels, hold-up play and acceleration remain developmental areas, particularly against stronger and more athletic defenders. Finished an impressive penalty confidently and demonstrated good attacking instincts, although he lacked the acceleration required to consistently separate from defenders in transition situations. Nevertheless, his movement, technical quality and understanding of space provide a strong foundation for a false-nine type striker profile.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">11</span>
+            <div class="player-main">Baisley-Joseph</div>
+            <span class="pill">LW</span>
+            <span class="pill red">Date of Birth 18 January 2008 (18)</span>
+            <span class="pill red">Height approximately 5'8"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Small, powerful athletic build. Direct inverted winger with the pace and athleticism to consistently threaten defenders in 1v1 situations. Appeared most dangerous when isolated against opposition full-backs and was most effective driving inside from the left onto his stronger right foot, combining dribbling, creativity and shooting threat. Demonstrated good acceleration and regularly progressed attacks through carries into central areas. Showed flashes of creativity through switches of play, reverse passes and combination play around the final third.</p>
+            <p>Defensively responsible and tactically disciplined, contributing positively without possession and maintaining good positional awareness. His willingness to drive inside onto his stronger foot provided a consistent threat, although there were occasions where greater confidence attacking the outside of defenders may have created more effective outcomes. Reliance on his stronger foot occasionally made his actions predictable, with limited evidence of him using his left foot to deliver crosses or attack down the line. This reduced the variety of his attacking options and allowed defenders to anticipate his preferred actions.</p>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <span class="player-number">14</span>
+            <div class="player-main">Nduka</div>
+            <span class="pill">CM</span>
+            <span class="pill red">Date of Birth 2 October 2008 (17)</span>
+            <span class="pill red">Height approximately 6'2"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Tall, developing frame. Physically imposing attacking midfield substitute who provided a different profile to Arsenal's midfield through strength, ball-carrying ability and directness. Comfortable driving through central spaces and committing opponents before releasing teammates into advanced areas. Demonstrated useful hold-up qualities and protected possession effectively when receiving under pressure. Technically capable of progressing attacks through both carrying and passing, although execution was inconsistent at times.</p>
+            <p>Showed good combination play when involved in attacking sequences and was generally comfortable receiving under pressure. More effective driving through opponents than controlling possession, with much of his influence coming through direct actions rather than subtle positional play. While he offered a useful option between the lines, his understanding of creating space, manipulating opponents and finding effective pockets appeared less developed than some of Arsenal's other attacking profiles.</p>
+            <p>Mobility, intensity and concentration levels were inconsistent throughout his cameo and reduced his overall influence on the game. His ball-carrying ability and direct style still provide an interesting alternative profile capable of changing the rhythm of matches.</p>
+          </div>
+        </div>
+
+        <div class="team-heading palace">Crystal Palace U18s</div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">1</span>
+            <div class="player-main">Lucca Benetton</div>
+            <span class="pill">GK</span>
+            <span class="pill red">Date of Birth 8 August 2010 (15)</span>
+            <span class="pill red">Height approximately 5'11"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Average athletic goalkeeper frame. Alert goalkeeper who maintained concentration throughout the match regardless of his level of involvement. Produced several impressive saves through sharp reflexes, strong positioning and calm decision-making, particularly in 1v1 situations where he closed angles effectively, made himself big and forced attackers into difficult finishes. Handling was secure, and he dealt confidently with crosses, loose balls and late pressure situations, giving Crystal Palace a reassuring presence behind the defensive line. Considering Benetton is only 15 years old and competing at U18 level, the maturity, composure and concentration he displayed throughout the match were particularly striking, never appearing overawed by the physical or tactical demands of playing against older opposition.</p>
+            <p>In possession, Benetton showed the confidence and technical security required to operate within a build-up structure. Comfortable distributing with either foot when required, while naturally favouring his right, he regularly looked for constructive solutions rather than aimless clearances. His passing range was clear, including an excellent long pass that directly contributed to a goalscoring attack. Longer distribution still needs greater consistency, but his sweeping, anticipation and composure provide a strong all-round goalkeeping base. Aerial dominance against more physical opposition remains an area for further assessment.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">2</span>
+            <div class="player-main">Hugo Bull</div>
+            <span class="pill">RB</span>
+            <span class="pill red">Date of Birth 16 October 2009 (16)</span>
+            <span class="pill red">Height approximately 6'2"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Tall, well-balanced frame. Extremely calm defensive presence who rarely appeared rushed and regularly solved situations before they became recovery actions. Bull showed strong anticipation, arrived first to loose balls and made sensible decisions when defending transitions or direct attacks. He was particularly impressive in 1v1 situations, delaying engagement effectively, showing patience and forcing attackers away from dangerous areas before regaining possession or forcing turnovers.</p>
+            <p>In possession, he looked comfortable receiving under pressure and had the technical security to support build-up play. A secure first touch and capable weaker foot allowed him to circulate possession confidently, while he also showed the ability to play longer passes over the opposition defence. Physically, his tall frame helped him dominate aerially for long periods. Quicker attackers occasionally exposed limitations in agility and body orientation, but these moments were infrequent within an otherwise assured display.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">4</span>
+            <div class="player-main">Charlie Walker-Smith</div>
+            <span class="pill">RCB</span>
+            <span class="pill red">Date of Birth 19 September 2007 (18)</span>
+            <span class="pill red">Height approximately 6'3"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Outstanding centre-back frame. Physically imposing centre-back who consistently took responsibility in and out of possession. Possessed an excellent frame for the position and used his strength, mobility and recovery speed to compete effectively in defensive duels, aerial situations and larger spaces. His anticipation was strong, frequently arriving first to neutral balls, reading danger early and helping manage the defensive line, including several disciplined offside-trap moments.</p>
+            <p>Walker-Smith showed real confidence in possession and regularly looked to advance attacks himself rather than immediately releasing the ball. He drove forward from deep areas with power and control, broke opposition lines and found teammates in advanced positions. He also demonstrated the technique and ambition to play longer passes into midfield and attacking zones. Concentration and body language were the main development points, with occasional visible frustration or disengagement after mistakes and stoppages. If he sustains focus more consistently, the physical and technical profile is highly promising.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">5</span>
+            <div class="player-main">Dylan Monk</div>
+            <span class="pill">LCB</span>
+            <span class="pill red">Date of Birth 13 November 2009 (16)</span>
+            <span class="pill red">Height approximately 6'1"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Strong, robust build. Left-sided centre-back who preferred to engage attackers early rather than allow situations to develop into isolated 1v1s. Defensively, he applied pressure aggressively when opponents received with their back to goal and competed effectively in both aerial and ground duels. He won most of his headers and produced several important defensive actions, including blocks, clearances and recoveries inside his own defensive third.</p>
+            <p>In possession, Monk was willing to receive and attempt progressive actions, particularly through longer passes into channels and forward areas, but execution was inconsistent. He appeared comfortable retaining possession when given time, yet less assured when pressed aggressively, occasionally resorting to rushed clearances or low-value passes. Scanning before receiving also appeared inconsistent, and his strong reliance on his right foot restricted him from the left-sided centre-back role. Recovery speed looked adequate, although agility and turning speed were less convincing when isolated against mobile attackers.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">3</span>
+            <div class="player-main">Khyan Frazer-Williams</div>
+            <span class="pill">LB</span>
+            <span class="pill red">Date of Birth 25 November 2007 (18)</span>
+            <span class="pill red">Height approximately 5'8"</span>
+            <span class="pill red">Left Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Small, lean athletic build. Energetic modern full-back who constantly looked to attack space, using acceleration, stamina and mobility to impact both attacking and defensive phases. His off-ball movement was a major strength, regularly making intelligent runs beyond opponents and stretching the opposition shape. His work rate was equally impressive, recovering into defensive positions before quickly transitioning back into attacking situations.</p>
+            <p>In possession, Frazer-Williams showed a clear left-foot preference and was most effective when able to receive and deliver on his stronger side. He crossed early, delivered driven passes into advanced areas and played longer balls down the line for runners. Comfortable carrying at speed, he beat opponents through balance, shoulder drops and quick shifts of possession. His assist for the opening goal showed awareness and composure, committing a defender before producing a well-timed lay-off inside the box. Decision-making was generally positive, though he occasionally forced ambitious through balls when simpler options were available. Greater weak-foot variety and more conviction in finishing would add another layer to his attacking profile.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">6</span>
+            <div class="player-main">Chuks Okoli</div>
+            <span class="pill">DM/CM</span>
+            <span class="pill red">Date of Birth 22 February 2008 (18)</span>
+            <span class="pill red">Height approximately 6'0"</span>
+            <span class="pill red">Left Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Powerful, well-developed midfield frame. Physically competitive midfielder who regularly looked to impose himself on central contests through aggression, strength and willingness to engage. Effective in loose-ball situations, aerial contests and second-ball duels, he disrupted Arsenal's rhythm and prevented attacks from developing comfortably through central areas. He covered ground well, competed aggressively during transitions and recovered possession through tackles and interceptions.</p>
+            <p>In possession, Okoli's passing was generally functional rather than progressive, with a tendency to play square or backwards when receiving. He was capable of moments of quality, including switches of play and clipped passes into advanced areas, but struggled to consistently progress through central spaces. Scanning frequency appeared limited and he rarely received on the half-turn, restricting his ability to play forward quickly. Communication was positive, regularly passing players on and helping organise teammates. His late switch into central defence also highlighted useful adaptability.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">8</span>
+            <div class="player-main">Jakob Fasida</div>
+            <span class="pill">DM/CM</span>
+            <span class="pill red">Date of Birth 16 September 2008 (17)</span>
+            <span class="pill red">Height approximately 6'1"</span>
+            <span class="pill red">Left Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Tall, sturdy build. Midfielder with clear technical ability but an inconsistent overall influence. There were periods where he drifted in and out of possession phases, limiting his impact in central areas. Out of possession, he remained competitive, contributing tackles, interceptions and recoveries while generally making sensible defensive decisions in midfield duels.</p>
+            <p>When involved on the ball, Fasida looked most comfortable lifting his head and distributing over longer distances. He showed good technique on clipped passes and switches into wide areas, and his combination play appeared more effective around the opposition penalty area than in deeper midfield zones. The recurring development point was build-up involvement: scanning frequency appeared limited, he rarely received on the half-turn and his first touch was mixed, with several heavy touches causing turnovers. At times he appeared reluctant to actively show for possession. Improved body orientation, concentration and a greater willingness to demand the ball would help unlock more of his technical ability.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">11</span>
+            <div class="player-main">Kayden Michael Moses</div>
+            <span class="pill">CM</span>
+            <span class="pill red">Date of Birth 21 November 2009 (16)</span>
+            <span class="pill red">Height approximately 6'1"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Tall athletic build. Mobile midfielder who regularly made himself available, created passing angles and supported both attacking and defensive phases. His work rate allowed him to influence large areas of the pitch, while his pressing and recovery actions helped maintain Crystal Palace's intensity in central areas. Communication was also positive, with Moses regularly directing teammates into defensive positions and helping maintain team shape during transitions.</p>
+            <p>His strongest quality was ball-carrying through midfield. Moses drove forward with purpose, using stride length, balance and upper-body strength to progress possession into attacking areas. Combination play was generally positive and he linked attacks effectively through shorter passing sequences. Technical consistency remains the main area to refine. His final decision-making occasionally broke promising attacks through overhit or misplaced passes, and his first touch fluctuated between excellent moments and unnecessary turnovers. His athletic profile, willingness to receive and ability to drive the team forward provide an encouraging foundation.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">7</span>
+            <div class="player-main">Ajean-Ray Greaves</div>
+            <span class="pill">RF</span>
+            <span class="pill red">Date of Birth 28 April 2009 (17)</span>
+            <span class="pill red">Height approximately 5'6"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Small, diminutive frame. Direct wide forward who consistently looked to isolate defenders and attack them whenever possession reached wide areas. His acceleration and agility stood out, allowing him to create separation over short distances and turn even situations into attacking opportunities. Despite a slight frame, he competed aggressively, pressed with intensity and tracked back to support the team, including a crucial recovery interception at the back post.</p>
+            <p>Greaves was most effective receiving to feet and driving directly at defenders. His dribbling was a major strength, using body feints, changes of direction and sharp footwork to manipulate opponents. He also showed good awareness when releasing teammates, producing an assist through a driving run and low cross after beating his opponent. Positionally, he mostly stayed high and wide, which suited his direct style, but his off-ball movement must improve so he becomes harder to mark during possession phases. A strong right-foot preference occasionally made his actions predictable.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">10</span>
+            <div class="player-main">Raihaan Anderson</div>
+            <span class="pill">LW</span>
+            <span class="pill red">Date of Birth 5 October 2008 (17)</span>
+            <span class="pill red">Height approximately 5'9"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Compact athletic build. Creative left-sided attacker who regularly drifted into central areas to influence attacks. His awareness and scanning were evident, consistently appearing prepared to receive before quickly identifying forward options. Combination play was a major strength, with quick passes, clever lay-offs and inventive touches helping progress Palace into advanced areas.</p>
+            <p>Anderson showed high technical quality under pressure, combining ball retention with the ability to execute difficult actions in tight spaces. He produced several standout moments, including a first-time through ball, an intelligent backheel into an overlapping runner and a skilful nutmeg before releasing possession. His biggest threat came around the penalty area, where he created shooting opportunities through sharp changes of direction and composure. His opening goal, cutting inside before finishing into the far corner with minimal back lift, was evidently a repeatable action, reflected by his ability to create several shots on goal from similar inside-channel movements. Defensive effort was present, though his pressing impact was limited.</p>
+          </div>
+        </div>
+
+        <div class="player-card palace">
+          <div class="player-head">
+            <span class="player-number">9</span>
+            <div class="player-main">Donte Martin</div>
+            <span class="pill">ST</span>
+            <span class="pill red">Date of Birth 13 November 2008 (17)</span>
+            <span class="pill red">Height approximately 6'1"</span>
+            <span class="pill red">Right Foot</span>
+          </div>
+          <div class="player-text">
+            <p>Powerful centre-forward build. Centre-forward whose penalty-box movement was one of the strongest individual features of the match. Martin consistently created separation through subtle changes of direction, blindside movement and instinctive positioning around rebounds and second balls. Both goals reflected classic striker qualities: reacting quickest, arriving in the correct areas and converting opportunities. His timing when attacking crosses and loose balls was particularly effective.</p>
+            <p>Martin also provided a strong focal point for Palace's attacks, using his physicality to protect possession, bring teammates into play and compete against centre-backs. His first touch was generally positive, with intelligent lay-offs and flicks helping connect attacking phases. Physically, he won several headers, used his arms intelligently to protect the ball and had enough pace to threaten space in behind.</p>
+            <p>Technical consistency remains the main area for development. While his link play was generally effective, passing and decision-making during longer dribbling sequences were less convincing, and he occasionally appeared uncomfortable when adjusting his body to execute more difficult technical actions, particularly in volleying situations. Pressing intensity was not effective despite a willingness to work for the team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

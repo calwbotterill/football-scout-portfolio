@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Viewer | Cal Botterill</title>
+  <meta name="description" content="Browser document viewer for Cal Botterill's football scouting portfolio." />
+  <link rel="icon" href="favicon-32.png?v=20260410-3" type="image/png" sizes="32x32" />
+  <link rel="icon" href="favicon.svg?v=20260410-3" type="image/svg+xml" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #080808;
+      color: #f5f5f5;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .viewer-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .viewer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px clamp(16px, 3vw, 28px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 5, 5, 0.96);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      line-height: 1.2;
+    }
+
+    .viewer-header a {
+      color: #7be5a6;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .viewer-frame {
+      width: 100%;
+      height: 100%;
+      min-height: calc(100vh - 62px);
+      border: 0;
+      background: #1a1a1a;
+    }
+
+    .viewer-fallback {
+      display: none;
+      padding: 24px;
+      color: #d4d4d4;
+    }
+  </style>
+</head>
+<body>
+  <main class="viewer-shell">
+    <header class="viewer-header">
+      <h1 id="viewerTitle">Document Viewer</h1>
+      <a href="index.html">Back to portfolio</a>
+    </header>
+
+    <iframe id="viewerFrame" class="viewer-frame" title="Document preview"></iframe>
+    <div id="viewerFallback" class="viewer-fallback">
+      This document could not be previewed in the browser.
+    </div>
+  </main>
+
+  <script>
+    const allowedFiles = new Set([
+      "reports/valentin-barco-3-match-report.pdf",
+      "IPSO-Level-3-Youth-Scouting-Certificate.pdf",
+      "FA-Introduction-to-Talent-Identification-Certificate.pdf",
+      "PFSA-Level-2-Talent-Identification-In-Football-Certificate.pdf",
+      "PFSA-Level-2-Technical-Scouting-In-Football-Certificate.pdf",
+      "PFSA-Level-2-Opposition-Analysis-In-Football-Certificate.pdf",
+      "PFSA-Level-1-Data-Analysis-In-Football-Certificate.pdf",
+      "StatsBomb-Introduction-to-Football-Analytics-Certificate.pdf",
+      "Sports Science Certificate.pdf",
+      "Cal Botterill BTEC Level 3 90-Credit & Extended Sport.pdf",
+      "Skills and Attributes Required by Football Clubs for Academy Graduate.pdf"
+    ]);
+
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file") || "";
+    const title = params.get("title") || "Document Viewer";
+    const frame = document.getElementById("viewerFrame");
+    const titleElement = document.getElementById("viewerTitle");
+    const fallback = document.getElementById("viewerFallback");
+
+    titleElement.textContent = title;
+    document.title = `${title} | Cal Botterill`;
+
+    if (allowedFiles.has(file)) {
+      frame.src = file;
+    } else {
+      frame.remove();
+      fallback.style.display = "block";
+    }
+  </script>
+</body>
+</html>
