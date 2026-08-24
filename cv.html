@@ -53,11 +53,12 @@
     }
 
     .cv-header {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 24px;
       align-items: start;
-      padding: 24px 30px 20px;
+      padding: 24px 170px 20px 30px;
       background: linear-gradient(135deg, var(--header) 0%, #172033 100%);
       color: #ffffff;
     }
@@ -86,6 +87,9 @@
     }
 
     .headshot {
+      position: absolute;
+      top: 18px;
+      right: 30px;
       width: 118px;
       height: 118px;
       border: 2px solid rgba(183, 255, 240, 0.54);
@@ -355,7 +359,7 @@
       }
 
       .cv-header {
-        padding: 15px 20px 13px;
+        padding: 15px 122px 13px 20px;
       }
 
       .cv-name {
@@ -371,6 +375,8 @@
       }
 
       .headshot {
+        top: 14px;
+        right: 20px;
         width: 88px;
         height: 88px;
         box-shadow: none;
