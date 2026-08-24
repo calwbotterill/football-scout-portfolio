@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,27 +6,22 @@
   <title>Cal Botterill | CV</title>
   <meta
     name="description"
-    content="Cal Botterill CV - Football Scout and Performance Analyst with focus on talent identification, tactical profiling, and recruitment reporting."
+    content="Cal Botterill CV - commercially minded professional with experience across business operations, client services, sales-focused environments and customer service."
   />
   <link rel="icon" href="favicon-32.png?v=20260410-3" type="image/png" sizes="32x32" />
   <link rel="icon" href="favicon.svg?v=20260410-3" type="image/svg+xml" />
   <link rel="shortcut icon" href="favicon-32.png?v=20260410-3" type="image/png" />
   <style>
     :root {
-      --bg: #e8edf3;
+      --page: #eef2f6;
       --paper: #ffffff;
-      --text: #0f172a;
-      --muted: #526071;
-      --line: #d9e2ec;
-      --navy: #071426;
-      --navy-2: #0b2039;
-      --accent: #12a37f;
-      --accent-dark: #0f766e;
-      --squadiq-green: #1f8f5f;
-      --squadiq-mint: #1ecf9c;
-      --accent-soft: #e5f7f1;
-      --heading: #102033;
-      --shadow: 0 12px 28px rgba(7, 20, 38, 0.08);
+      --ink: #111827;
+      --muted: #4b5563;
+      --soft: #f4f7fa;
+      --line: #d8e0e8;
+      --accent: #0f766e;
+      --accent-dark: #0b4f4a;
+      --header: #0f172a;
     }
 
     * {
@@ -40,847 +35,521 @@
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Segoe UI", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
+      background: var(--page);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.45;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
-    .cv-shell {
-      width: min(1100px, calc(100% - 28px));
-      margin: 14px auto;
+    .cv-page {
+      width: min(980px, calc(100% - 28px));
+      margin: 18px auto;
       background: var(--paper);
-      border: 1px solid #cfd9e5;
-      border-radius: 18px;
-      box-shadow: 0 18px 45px rgba(7, 20, 38, 0.14);
-      overflow: hidden;
+      border: 1px solid #cfd8e3;
+      box-shadow: 0 18px 46px rgba(15, 23, 42, 0.12);
     }
 
-    .cv-hero {
-      position: relative;
-      padding: 26px 30px;
-      background:
-        radial-gradient(circle at 88% 10%, rgba(30, 207, 156, 0.28), transparent 28%),
-        radial-gradient(circle at 10% 14%, rgba(31, 143, 95, 0.12), transparent 30%),
-        linear-gradient(135deg, #f7fffb 0%, #e8faf3 48%, #d9f4ea 100%);
-      color: var(--heading);
-      overflow: hidden;
-    }
-
-    .cv-hero::before {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--squadiq-green), var(--squadiq-mint), rgba(31, 143, 95, 0.08));
-    }
-
-    .cv-hero-left {
-      position: relative;
+    .cv-header {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 22px;
-      align-items: center;
+      align-items: end;
+      padding: 28px 32px 22px;
+      background: linear-gradient(135deg, var(--header) 0%, #172033 100%);
+      color: #ffffff;
     }
 
-    .cv-avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(31, 143, 95, 0.72);
-      background: #f1f5f9;
-      box-shadow: 0 0 0 5px rgba(31, 143, 95, 0.1), 0 12px 24px rgba(7, 20, 38, 0.12);
-      margin-right: 32px;
-    }
-
-    .cv-hero h1 {
+    .cv-name {
       margin: 0;
-      font-size: clamp(2.45rem, 4.7vw, 4rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      color: #061121;
+      font-size: clamp(2.15rem, 4.8vw, 3.3rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+      font-weight: 850;
     }
 
-    .cv-role {
+    .cv-title {
       margin: 9px 0 0;
-      color: #11694d;
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.015em;
-      line-height: 1.35;
-    }
-
-    .hero-kicker {
-      margin: 0 0 7px;
-      color: var(--squadiq-green);
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
+      color: #b7fff0;
+      font-size: 0.95rem;
+      font-weight: 750;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
 
-    .cv-tags {
-      margin-top: 16px;
+    .contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
+      justify-content: flex-end;
+      gap: 7px;
+      max-width: 360px;
     }
 
-    .cv-tags span,
-    .cv-tags a,
-    .contact-pill {
+    .contact a,
+    .contact span {
       display: inline-flex;
       align-items: center;
-      width: fit-content;
-      border: 1px solid rgba(31, 143, 95, 0.24);
-      background: rgba(255, 255, 255, 0.78);
-      color: #10382f;
+      min-height: 28px;
+      padding: 5px 9px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 999px;
-      padding: 7px 11px;
-      font-size: 0.83rem;
-      font-weight: 600;
+      background: rgba(255, 255, 255, 0.08);
+      color: #f8fafc;
+      font-size: 0.79rem;
+      font-weight: 650;
       text-decoration: none;
-      box-shadow: 0 6px 16px rgba(31, 143, 95, 0.08);
+      white-space: nowrap;
     }
 
-    .cv-grid {
+    .cv-body {
       display: grid;
-      grid-template-columns: 0.72fr 1.78fr;
-      gap: 18px;
-      padding: 18px;
-      background: linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+      grid-template-columns: 0.9fr 1.55fr;
+      gap: 22px;
+      padding: 24px 32px 28px;
     }
 
-    .cv-main,
-    .cv-side {
-      display: grid;
-      align-content: start;
-      gap: 14px;
+    .section {
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
 
-    .cv-side {
-      order: -1;
+    .section + .section {
+      margin-top: 18px;
     }
 
-    .cv-card {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 15px;
-      background: #ffffff;
-      box-shadow: var(--shadow);
-    }
-
-    .cv-card h3 {
-      margin: 0 0 10px;
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
+    h2 {
+      margin: 0 0 9px;
       color: var(--accent-dark);
-      font-weight: 800;
-    }
-
-    .cv-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.62;
-    }
-
-    .cv-card ul {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 0.91rem;
-      line-height: 1.58;
-    }
-
-    .cv-card li + li {
-      margin-top: 6px;
-    }
-
-    .profile-summary {
-      border-left: 4px solid var(--accent);
-    }
-
-    .scouting-focus {
-      border: 1px solid #bde8dc;
-      border-radius: 13px;
-      padding: 14px 15px;
-      background: linear-gradient(135deg, #effcf7 0%, #ffffff 100%);
-      box-shadow: 0 8px 18px rgba(15, 118, 110, 0.08);
-    }
-
-    .scouting-focus strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #0b615a;
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .scouting-focus p {
-      color: #173a35;
-      font-weight: 700;
+    p {
+      margin: 0;
+      color: var(--muted);
     }
 
-    .scouting-profile-card {
-      background:
-        linear-gradient(180deg, rgba(18, 163, 127, 0.05), rgba(255, 255, 255, 0)),
-        #ffffff;
+    .profile {
+      padding: 15px 16px;
+      border-left: 4px solid var(--accent);
+      background: var(--soft);
     }
 
-    .scouting-profile-list {
+    .profile p {
+      color: #263241;
+      font-size: 0.94rem;
+    }
+
+    .skill-list {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
-      padding-left: 0 !important;
+      margin: 0;
+      padding: 0;
       list-style: none;
     }
 
-    .scouting-profile-list li {
-      border: 1px solid #cbe6dd;
-      border-radius: 999px;
-      padding: 5px 8px;
-      background: #f3fbf8;
-      color: #15362f;
+    .skill-list li {
+      padding: 6px 8px;
+      border: 1px solid #cfdde7;
+      border-radius: 8px;
+      background: #fbfcfe;
+      color: #1f2937;
       font-size: 0.78rem;
-      font-weight: 650;
+      font-weight: 700;
       line-height: 1.2;
     }
 
-    .reports-subheading {
-      margin: -4px 0 10px;
-      color: #64748b;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .role {
+      padding-bottom: 13px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .reports-card {
-      border-color: #cbded9;
-      box-shadow: 0 14px 32px rgba(7, 20, 38, 0.1);
+    .role + .role {
+      margin-top: 14px;
     }
 
-    .reports-grid {
+    .role:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .role-head {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 11px;
-    }
-
-    .report-item,
-    .education-item {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      background: #ffffff;
-    }
-
-    .experience-item {
-      border-color: #cfe2dc;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fcfb 100%);
-    }
-
-    .experience-item ul {
-      margin-top: 8px;
-    }
-
-    .education-item + .education-item {
-      margin-top: 8px;
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-    }
-
-    .education-grid .education-item {
-      margin-top: 0;
-      padding: 11px;
-    }
-
-    .education-compact {
-      min-height: 0;
-      background: #fbfefd;
-    }
-
-    .education-highlight {
-      margin-top: 9px;
-      border-color: #9ddcca;
-      background: linear-gradient(145deg, #f2fbf8, #ffffff);
-    }
-
-    .education-subtitle {
-      margin: 2px 0 8px !important;
-      color: #233a49 !important;
-      font-size: 0.9rem !important;
-      font-weight: 750;
-      line-height: 1.35 !important;
-    }
-
-    .report-card {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      min-height: 100%;
-      color: inherit;
-      text-decoration: none;
-      border-color: #cfe1dc;
-    }
-
-    .report-item h4,
-    .education-item h4,
-    .mini-heading {
-      margin: 0;
-      color: #0f172a;
-      font-size: 0.96rem;
-      line-height: 1.3;
-      font-weight: 800;
-    }
-
-    .report-item p,
-    .education-item p {
-      margin: 5px 0 0;
-      color: var(--muted);
-      font-size: 0.89rem;
-      line-height: 1.58;
-    }
-
-    .report-card p {
-      margin: 0;
-    }
-
-    .report-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-top: 1px;
-    }
-
-    .report-tags span {
-      border: 1px solid #d3e8e2;
-      border-radius: 999px;
-      padding: 3px 7px;
-      background: #f5fbf9;
-      color: #31534d;
-      font-size: 0.68rem;
-      font-weight: 750;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .cv-inline-link {
-      display: inline-block;
-      margin-top: auto;
-      font-size: 0.74rem;
-      font-weight: 800;
-      color: var(--accent-dark);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
+      grid-template-columns: 1fr auto;
       gap: 10px;
-      margin-top: 9px;
+      align-items: baseline;
+      margin-bottom: 7px;
     }
 
-    .project-links .cv-inline-link {
-      margin-top: 0;
-    }
-
-    .title-link {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(15, 118, 110, 0.28);
-    }
-
-    .title-link:hover {
-      color: var(--accent-dark);
-      border-bottom-color: rgba(15, 118, 110, 0.52);
-    }
-
-    .mini-heading {
-      margin-top: 9px;
-      margin-bottom: 8px;
-      font-size: 0.84rem;
-    }
-
-    .pill-list,
-    .contact-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .pill-list div,
-    .pill-list a,
-    .contact-list a,
-    .contact-list span {
-      border: 1px solid #d4e7e1;
-      border-radius: 999px;
-      padding: 6px 8px;
-      background: #f8fcfb;
-      color: #263b4b;
-      font-size: 0.79rem;
-      font-weight: 650;
+    h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1rem;
       line-height: 1.25;
+    }
+
+    .company {
+      display: block;
+      margin-top: 2px;
+      color: var(--accent-dark);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .date {
+      color: #5b6675;
+      font-size: 0.78rem;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 17px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .lead-role {
+      padding: 14px 15px;
+      border: 1px solid #bcd7d4;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #f7fffd 0%, #ffffff 100%);
+      box-shadow: 0 10px 22px rgba(15, 118, 110, 0.08);
+    }
+
+    .lead-role .role-head {
+      margin-bottom: 9px;
+    }
+
+    .lead-role h3 {
+      font-size: 1.08rem;
+    }
+
+    .lead-role li {
+      color: #324152;
+    }
+
+    .compact-role ul {
+      font-size: 0.9rem;
+    }
+
+    .side-card {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fbfcfe;
+    }
+
+    .side-card + .side-card {
+      margin-top: 13px;
+    }
+
+    .education-item + .education-item,
+    .info-list li + li {
+      margin-top: 7px;
+    }
+
+    .education-title {
+      color: #172033;
+      font-weight: 850;
+    }
+
+    .education-detail,
+    .info-list {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .info-list {
+      margin: 0;
+      padding-left: 17px;
+    }
+
+    .download-row {
+      margin-top: 13px;
+    }
+
+    .download-row a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 34px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--accent-dark);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 800;
       text-decoration: none;
     }
 
-    .contact-list {
-      gap: 7px;
-    }
-
-    .availability-list {
-      padding-left: 16px;
-      line-height: 1.46;
-    }
-
-    .cv-footer {
-      padding: 12px 22px 18px;
-      border-top: 1px solid var(--line);
-      color: #64748b;
-      font-size: 0.79rem;
-      background: #fbfdff;
-    }
-
-    @media (max-width: 920px) {
-      .cv-shell {
-        width: min(1100px, calc(100% - 16px));
-        margin: 8px auto;
-        border-radius: 12px;
-      }
-
-      .cv-hero {
-        padding: 18px;
-      }
-
-      .cv-hero-left {
+    @media (max-width: 780px) {
+      .cv-header,
+      .cv-body,
+      .role-head {
         grid-template-columns: 1fr;
       }
 
-      .cv-avatar {
-        width: 121px;
-        height: 121px;
-        grid-row: 1;
-        margin-right: 0;
+      .contact {
+        justify-content: flex-start;
       }
 
-      .cv-grid {
-        grid-template-columns: 1fr;
-        padding: 10px;
+      .cv-body {
+        padding: 20px;
       }
 
-      .cv-side {
-        order: 0;
-      }
-
-      .reports-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .education-grid {
-        grid-template-columns: 1fr;
+      .date {
+        white-space: normal;
       }
     }
 
     @page {
       size: A4;
-      margin: 6mm;
+      margin: 8mm;
     }
 
     @media print {
       body {
         background: #ffffff;
-        font-size: 11px;
-        line-height: 1.3;
+        font-size: 12px;
       }
 
-      .cv-shell {
+      .cv-page {
         width: 100%;
         margin: 0;
         border: 0;
-        border-radius: 0;
         box-shadow: none;
-        overflow: visible;
-        zoom: 0.78;
-        width: calc(100% / 0.78);
       }
 
-      .cv-hero {
-        padding: 10px 12px;
-        break-inside: avoid;
-        page-break-inside: avoid;
+      .cv-header {
+        padding: 18px 22px 15px;
       }
 
-      .header-inner,
-      .hero-inner,
-      .cv-header-inner,
-      .cv-hero-left {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap !important;
-        gap: 12px;
+      .cv-name {
+        font-size: 2.35rem;
       }
 
-      .cv-hero-left > div {
-        flex: 1 1 auto;
-        min-width: 0;
-        max-width: calc(100% - 112px);
-      }
-
-      .header-photo,
-      .profile-photo,
-      .profile-image,
-      .cv-photo,
-      header img,
-      .cv-hero img,
-      .cv-avatar {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-
-      header img,
-      .cv-hero img,
-      .cv-avatar {
-        width: 96px !important;
-        height: 96px !important;
-        min-width: 96px;
-        max-width: 96px;
-        flex: 0 0 96px;
-        flex-shrink: 0 !important;
-        margin-right: 18px;
-        object-fit: cover !important;
-        border-radius: 50% !important;
-      }
-
-      .cv-hero h1 {
-        font-size: 2rem;
-      }
-
-      .cv-role {
-        margin-top: 3px;
+      .cv-title {
         font-size: 0.72rem;
       }
 
-      .hero-kicker {
-        font-size: 0.7rem;
-      }
-
-      .cv-tags {
-        margin-top: 6px;
-        gap: 4px;
-      }
-
-      .cv-tags span,
-      .cv-tags a {
-        font-size: 0.63rem;
-        padding: 3px 6px;
-      }
-
-      .cv-grid {
-        display: grid;
-        grid-template-columns: 0.82fr 1.68fr;
-        align-items: start;
-        gap: 6px;
-        padding: 6px;
-      }
-
-      .cv-card {
-        padding: 6px;
-        border-radius: 9px;
-        box-shadow: none;
-        break-inside: avoid-page;
-        page-break-inside: avoid;
-      }
-
-      .cv-card h3 {
-        margin-bottom: 5px;
-        font-size: 0.64rem;
-      }
-
-      .cv-card p,
-      .cv-card ul {
-        font-size: 0.68rem;
-      }
-
-      .cv-card li + li {
-        margin-top: 2px;
-      }
-
-      .scouting-profile-list {
-        gap: 3px;
-      }
-
-      .scouting-profile-list li {
-        font-size: 0.58rem;
-        padding: 3px 5px;
-      }
-
-      .report-item,
-      .education-item,
-      .pill-list div,
-      .pill-list a,
-      .contact-list a,
-      .contact-list span {
-        break-inside: avoid-page;
-        page-break-inside: avoid;
-      }
-
-      .report-item,
-      .education-item {
-        padding: 6px;
-      }
-
-      .report-item + .report-item,
-      .education-item + .education-item {
-        margin-top: 4px;
-      }
-
-      .report-item h4,
-      .education-item h4 {
-        font-size: 0.7rem;
-      }
-
-      .report-item p,
-      .education-item p,
-      .pill-list div,
-      .pill-list a,
-      .contact-list a,
-      .contact-list span {
+      .contact a,
+      .contact span {
+        min-height: 0;
+        padding: 3px 7px;
         font-size: 0.62rem;
       }
 
-      .cv-inline-link {
-        font-size: 0.56rem;
+      .cv-body {
+        grid-template-columns: 0.86fr 1.64fr;
+        gap: 14px;
+        padding: 14px 22px 18px;
       }
 
-      .mini-heading {
-        margin-top: 5px;
+      .section + .section {
+        margin-top: 11px;
+      }
+
+      h2 {
+        margin-bottom: 6px;
+        font-size: 0.62rem;
+      }
+
+      .profile {
+        padding: 9px 10px;
+      }
+
+      .profile p,
+      p,
+      ul,
+      .education-detail,
+      .info-list {
+        font-size: 0.67rem;
+        line-height: 1.32;
+      }
+
+      .skill-list {
+        gap: 4px;
+      }
+
+      .skill-list li {
+        padding: 4px 6px;
+        border-radius: 6px;
+        font-size: 0.62rem;
+      }
+
+      .lead-role,
+      .side-card {
+        padding: 8px;
+        border-radius: 7px;
+        box-shadow: none;
+      }
+
+      .role + .role {
+        margin-top: 9px;
+      }
+
+      .role {
+        padding-bottom: 8px;
+      }
+
+      .role-head {
         margin-bottom: 4px;
-        font-size: 0.7rem;
       }
 
-      .pill-list,
-      .contact-list {
-        gap: 3px;
+      h3,
+      .lead-role h3 {
+        font-size: 0.78rem;
       }
 
-      .pill-list div,
-      .pill-list a,
-      .contact-list a,
-      .contact-list span {
-        padding: 3px 5px;
+      .company {
+        font-size: 0.66rem;
       }
 
-      .reports-grid {
-        gap: 4px;
+      .date {
+        font-size: 0.6rem;
       }
 
-      .education-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 4px;
+      li + li {
+        margin-top: 2px;
       }
 
-      .education-grid .education-item {
-        padding: 6px;
+      .download-row {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
-  <div class="cv-shell">
-    <section class="cv-hero">
-      <div class="cv-hero-left header-inner hero-inner cv-header-inner">
-        <div>
-          <p class="hero-kicker">Football Scouting / Analysis Profile</p>
-          <h1>Cal Botterill</h1>
-          <p class="cv-role">Football Scout | Player Profiling • Talent Identification • Match Analysis</p>
-
-          <div class="cv-tags">
-            <span>calwbotterill@gmail.com</span>
-            <span>07584 693950</span>
-            <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer">squadiq.co.uk</a>
-          </div>
-        </div>
-        <img src="images/Suit Profile Pic.png" alt="Cal Botterill suit profile photo" class="cv-avatar header-photo profile-photo profile-image cv-photo" />
+  <main class="cv-page">
+    <header class="cv-header">
+      <div>
+        <h1 class="cv-name">Cal Botterill</h1>
+        <p class="cv-title">Business Operations | Client Services | Sales &amp; Account Support</p>
       </div>
-    </section>
+      <div class="contact" aria-label="Contact details">
+        <a href="tel:07584693950">07584 693950</a>
+        <a href="mailto:calwbotterill@gmail.com">calwbotterill@gmail.com</a>
+        <span>Croydon / London</span>
+      </div>
+    </header>
 
-    <section class="cv-grid">
-      <aside class="cv-side">
-        <div class="cv-card">
-          <h3>Contact</h3>
-          <div class="contact-list">
-            <a href="mailto:calwbotterill@gmail.com">calwbotterill@gmail.com</a>
-            <span>07584 693950</span>
-            <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer">squadiq.co.uk</a>
-          </div>
-        </div>
-
-        <div class="cv-card scouting-profile-card">
-          <h3>Core Scouting Areas</h3>
-          <ul class="scouting-profile-list">
-            <li>Player Assessment &amp; Profiling</li>
-            <li>Talent Identification</li>
-            <li>Match Analysis</li>
-            <li>Opposition Analysis</li>
-            <li>Recruitment Reporting</li>
-            <li>Role Suitability Analysis</li>
-            <li>Tactical Observation</li>
-            <li>Written Scouting Reports</li>
+    <section class="cv-body">
+      <aside>
+        <section class="section side-card">
+          <h2>Core Skills</h2>
+          <ul class="skill-list">
+            <li>Client Relationship Management</li>
+            <li>Sales &amp; Business Development</li>
+            <li>Customer Service</li>
+            <li>Business Operations</li>
+            <li>Communication &amp; Negotiation</li>
+            <li>Lead Handling &amp; Client Onboarding</li>
+            <li>Team Coordination</li>
+            <li>Administration &amp; Organisation</li>
+            <li>Microsoft Office / Digital Systems</li>
           </ul>
-        </div>
+        </section>
 
-        <div class="cv-card">
-          <h3>Qualifications</h3>
-          <h4 class="mini-heading">PFSA Qualifications</h4>
-          <div class="pill-list">
-            <div>Talent Identification</div>
-            <div>Technical Scouting</div>
-            <div>Opposition Analysis</div>
-            <div>Data Analysis</div>
+        <section class="section side-card">
+          <h2>Education</h2>
+          <div class="education-item">
+            <div class="education-title">BSc Sports Science - 2:1</div>
+            <div class="education-detail">Bournemouth University, Bournemouth</div>
           </div>
-
-          <h4 class="mini-heading">Further Development</h4>
-          <div class="pill-list">
-            <div>IPSO Level 3 Youth Scouting</div>
-            <div>FA Introduction to Talent Identification</div>
-            <div>StatsBomb Introduction to Football Analytics</div>
+          <div class="education-item">
+            <div class="education-title">BTEC Level 3 Sport</div>
+            <div class="education-detail">Merrist Wood College, Guildford</div>
           </div>
-        </div>
-
-        <div class="cv-card">
-          <h3>Software &amp; Tools</h3>
-          <div class="pill-list">
-            <div>Wyscout</div>
-            <div>Hudl</div>
-            <div>StatsBomb</div>
-            <div>Excel</div>
-            <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer">SquadIQ</a>
+          <div class="education-item">
+            <div class="education-title">11 GCSEs grades A-C</div>
+            <div class="education-detail">Including English and Mathematics</div>
           </div>
-        </div>
+        </section>
 
-        <div class="cv-card">
-          <h3>Scouting Availability</h3>
-          <ul class="availability-list">
-            <li>Live match observation</li>
-            <li>Academy, youth, women&rsquo;s and non-league scouting</li>
-            <li>Player, match and opposition reports</li>
-            <li>UK-based with remote video analysis</li>
+        <section class="section side-card">
+          <h2>Additional Information</h2>
+          <ul class="info-list">
+            <li>Full UK Driving Licence</li>
+            <li>Comfortable using Microsoft Office and digital business systems</li>
+            <li>Degree-level research and analysis experience</li>
           </ul>
-        </div>
+          <div class="download-row">
+            <a href="document-viewer.html?file=2025%20updated%20CV.pdf&title=2025%20Updated%20CV" target="_blank" rel="noopener noreferrer">Open PDF CV</a>
+          </div>
+        </section>
       </aside>
 
-      <div class="cv-main">
-        <div class="cv-card profile-summary">
-          <h3>Profile Summary</h3>
+      <div>
+        <section class="section profile">
+          <h2>Professional Profile</h2>
           <p>
-            Football scout with experience producing player, match and opposition reports through live and video
-            observation. Skilled in player profiling, role suitability, tactical analysis and recruitment-focused
-            reporting. Combines sport science knowledge, scouting qualifications and independent analysis work to
-            deliver clear, practical insights for performance and recruitment decision-making.
+            Commercially minded professional with experience across business operations, client services, customer service and sales-focused environments. Has supported the running of a client-facing professional services business, handling enquiries, onboarding clients, coordinating work and helping improve internal processes. Confident building relationships by phone, email and in person, with strong commercial awareness and the ability to work independently, take ownership and solve problems. Degree-educated and now targeting roles across sales, marketing, business development, account management, customer success and operations.
           </p>
-        </div>
+        </section>
 
-        <div class="cv-card">
-          <h3>Experience</h3>
-          <div class="report-item experience-item">
-            <h4>Independent Football Scout / Analyst</h4>
-            <p>2025 – Present</p>
+        <section class="section">
+          <h2>Professional Experience</h2>
+          <article class="role lead-role">
+            <div class="role-head">
+              <div>
+                <h3>Business Operations &amp; Client Services</h3>
+                <span class="company">Family Law Decisions</span>
+              </div>
+              <span class="date">Current / Recent</span>
+            </div>
             <ul>
-              <li>Produce live and video-based player, opposition and match reports.</li>
-              <li>Assess technical, tactical, physical and psychological player qualities.</li>
-              <li>Profile players by position, role suitability and recruitment relevance.</li>
-              <li>Analyse team structures, match trends, in-possession/out-of-possession behaviours and key tactical patterns.</li>
-              <li>Create clear written reports to support coaching, recruitment and player evaluation.</li>
+              <li>Supported the day-to-day running and growth of a client-facing professional services business, balancing client communication, administration and operational priorities.</li>
+              <li>Handled incoming enquiries from prospective clients, clarified requirements and helped move suitable enquiries towards paid services through clear, confident communication.</li>
+              <li>Maintained contact with prospective and existing clients by telephone, email and digital channels, helping keep the client journey organised and professional.</li>
+              <li>Supported onboarding, appointment coordination and allocation of work to appropriate team members, including McKenzie Friends and paralegals.</li>
+              <li>Contributed to business development and customer acquisition activity, including online presence, lead generation and practical improvements to the sales process.</li>
+              <li>Helped improve internal workflows, systems and service processes so enquiries, client information and follow-up actions were handled more efficiently.</li>
+              <li>Worked closely with management on growth ideas, service improvements, invoicing support, payment tracking and wider commercial administration.</li>
             </ul>
-          </div>
-        </div>
+          </article>
 
-        <div class="cv-card reports-card">
-          <h3>Portfolio Report Samples</h3>
-          <p class="reports-subheading">A small selection of scouting reports included in this portfolio pack.</p>
-
-          <div class="reports-grid">
-            <div class="report-item report-card">
-              <h4>
-                Man City U18s vs Derby U18s
-              </h4>
-              <p>Twenty-four player scouting report from a U18 Premier League North fixture.</p>
+          <article class="role compact-role">
+            <div class="role-head">
+              <div>
+                <h3>Store Assistant</h3>
+                <span class="company">ALDI</span>
+              </div>
+              <span class="date">Recent Retail Experience</span>
             </div>
+            <ul>
+              <li>Worked in a fast-paced commercial environment, supporting store standards, stock routines, customer service and payment handling.</li>
+              <li>Met performance expectations across varied shifts while staying organised, reliable and calm under pressure.</li>
+              <li>Dealt confidently with customer queries and practical problems, contributing to an efficient team environment.</li>
+            </ul>
+          </article>
 
-            <div class="report-item report-card">
-              <h4>Arsenal U18s vs Crystal Palace U18s</h4>
-              <p>Twenty-four player scouting report from a U18 Premier League South fixture.</p>
+          <article class="role compact-role">
+            <div class="role-head">
+              <div>
+                <h3>Additional Customer-Facing Experience</h3>
+                <span class="company">Tesco | Iceland | Subway | Camp Walden, New York</span>
+              </div>
+              <span class="date">Previous Roles</span>
             </div>
-
-            <div class="report-item report-card">
-              <h4>Derby County Women vs Sporting Khalsa Women</h4>
-              <p>Player-focused scouting report from an FA Women&rsquo;s National League fixture.</p>
-            </div>
-
-            <div class="report-item report-card">
-              <h4>Chelsea U16s vs Atletico Madrid U16s</h4>
-              <p>Player-focused scouting report from an academy-level U16 fixture.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="cv-card">
-          <h3>Scouting Projects</h3>
-          <div class="report-item">
-            <h4>
-              Founder, <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer" class="title-link">SquadIQ</a>
-            </h4>
-            <p>
-              Developed a football scouting and squad management platform to support player profiling, role suitability,
-              match preparation and team analysis. Built from my own scouting workflow to help grassroots and
-              academy-level teams assess players and prepare for matches.
-            </p>
-            <div class="project-links">
-              <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View SquadIQ Platform</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="cv-card">
-          <h3>Education &amp; Football Research</h3>
-
-          <div class="education-grid">
-            <div class="education-item education-compact">
-              <h4>BSc Sports Science</h4>
-            </div>
-
-            <div class="education-item education-compact">
-              <h4>BTEC Level 3 Extended Diploma in Sport</h4>
-            </div>
-          </div>
-
-          <div class="education-item education-highlight">
-            <h4>Dissertation Research</h4>
-            <p class="education-subtitle">Skills &amp; Attributes Required by Football Clubs from Academy Graduates</p>
-            <p>Research focused on the technical, tactical, physical and psychological qualities football clubs look for in academy graduates, with direct relevance to player profiling, development pathways and recruitment assessment.</p>
-          </div>
-        </div>
+            <ul>
+              <li>Built broad customer service, sales support and teamwork experience across supermarket, food service and international camp environments.</li>
+              <li>Developed confidence working under pressure, communicating with different customer groups, handling responsibility and maintaining service standards in busy settings.</li>
+            </ul>
+          </article>
+        </section>
       </div>
     </section>
-
-  </div>
+  </main>
 </body>
 </html>
-
-
-
