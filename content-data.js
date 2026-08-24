@@ -116,6 +116,7 @@
     { label: "StatsBomb Introduction to Football Analytics", href: "document-viewer.html?file=StatsBomb-Introduction-to-Football-Analytics-Certificate.pdf&title=StatsBomb%20Introduction%20to%20Football%20Analytics" }
   ],
   foundationDocs: [
+    { label: "View Updated CV", href: "document-viewer.html?file=2025%20updated%20CV.pdf&title=2025%20Updated%20CV" },
     { label: "View Certificate", href: "document-viewer.html?file=Sports%20Science%20Certificate.pdf&title=Sports%20Science%20Certificate" },
     { label: "View BTEC", href: "document-viewer.html?file=Cal%20Botterill%20BTEC%20Level%203%2090-Credit%20%26%20Extended%20Sport.pdf&title=BTEC%20Level%203%20Sport" },
     { label: "View Dissertation", href: "document-viewer.html?file=Skills%20and%20Attributes%20Required%20by%20Football%20Clubs%20for%20Academy%20Graduate.pdf&title=Academy%20Progression%20Dissertation" },
