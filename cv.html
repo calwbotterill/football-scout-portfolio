@@ -13,14 +13,20 @@
   <link rel="shortcut icon" href="favicon-32.png?v=20260410-3" type="image/png" />
   <style>
     :root {
-      --bg: #eef3f8;
+      --bg: #e8edf3;
       --paper: #ffffff;
       --text: #0f172a;
-      --muted: #475569;
-      --line: #dbe3ec;
-      --accent: #0f766e;
-      --accent-soft: #e7f5f2;
-      --heading: #0b2540;
+      --muted: #526071;
+      --line: #d9e2ec;
+      --navy: #071426;
+      --navy-2: #0b2039;
+      --accent: #12a37f;
+      --accent-dark: #0f766e;
+      --squadiq-green: #1f8f5f;
+      --squadiq-mint: #1ecf9c;
+      --accent-soft: #e5f7f1;
+      --heading: #102033;
+      --shadow: 0 12px 28px rgba(7, 20, 38, 0.08);
     }
 
     * {
@@ -37,7 +43,8 @@
       background: var(--bg);
       color: var(--text);
       font-family: "Segoe UI", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.55;
+      font-size: 16px;
+      line-height: 1.6;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -46,115 +53,141 @@
       width: min(1100px, calc(100% - 28px));
       margin: 14px auto;
       background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+      border: 1px solid #cfd9e5;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(7, 20, 38, 0.14);
       overflow: hidden;
     }
 
     .cv-hero {
-      padding: 22px;
-      border-bottom: 1px solid var(--line);
-      background: linear-gradient(90deg, #ffffff 0%, #f8fbff 65%, #f2faf8 100%);
+      position: relative;
+      padding: 26px 30px;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(30, 207, 156, 0.28), transparent 28%),
+        radial-gradient(circle at 10% 14%, rgba(31, 143, 95, 0.12), transparent 30%),
+        linear-gradient(135deg, #f7fffb 0%, #e8faf3 48%, #d9f4ea 100%);
+      color: var(--heading);
+      overflow: hidden;
+    }
+
+    .cv-hero::before {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--squadiq-green), var(--squadiq-mint), rgba(31, 143, 95, 0.08));
     }
 
     .cv-hero-left {
+      position: relative;
       display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 18px;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
       align-items: center;
     }
 
     .cv-avatar {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid #cce4de;
+      border: 3px solid rgba(31, 143, 95, 0.72);
       background: #f1f5f9;
+      box-shadow: 0 0 0 5px rgba(31, 143, 95, 0.1), 0 12px 24px rgba(7, 20, 38, 0.12);
+      margin-right: 32px;
     }
 
     .cv-hero h1 {
       margin: 0;
-      font-size: clamp(1.8rem, 2.8vw, 2.3rem);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--heading);
+      font-size: clamp(2.45rem, 4.7vw, 4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      color: #061121;
     }
 
     .cv-role {
-      margin: 7px 0 0;
-      color: var(--accent);
-      font-size: 0.98rem;
+      margin: 9px 0 0;
+      color: #11694d;
+      font-size: 1.05rem;
       font-weight: 700;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.015em;
+      line-height: 1.35;
     }
 
-    .cv-intro {
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 82ch;
+    .hero-kicker {
+      margin: 0 0 7px;
+      color: var(--squadiq-green);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
     .cv-tags {
-      margin-top: 12px;
+      margin-top: 16px;
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 9px;
     }
 
-    .cv-tags span {
-      border: 1px solid #cbe2dd;
-      background: var(--accent-soft);
-      color: #11534d;
+    .cv-tags span,
+    .cv-tags a,
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 1px solid rgba(31, 143, 95, 0.24);
+      background: rgba(255, 255, 255, 0.78);
+      color: #10382f;
       border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 0.81rem;
+      padding: 7px 11px;
+      font-size: 0.83rem;
       font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(31, 143, 95, 0.08);
     }
 
     .cv-grid {
       display: grid;
-      grid-template-columns: 1.45fr 1fr;
-      gap: 0;
+      grid-template-columns: 0.72fr 1.78fr;
+      gap: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
     }
 
     .cv-main,
     .cv-side {
-      padding: 18px 22px 22px;
+      display: grid;
+      align-content: start;
+      gap: 14px;
     }
 
     .cv-side {
-      border-left: 1px solid var(--line);
-      background: #fcfdff;
+      order: -1;
     }
 
     .cv-card {
       border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 13px;
+      border-radius: 14px;
+      padding: 15px;
       background: #ffffff;
-    }
-
-    .cv-card + .cv-card {
-      margin-top: 12px;
+      box-shadow: var(--shadow);
     }
 
     .cv-card h3 {
       margin: 0 0 10px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       text-transform: uppercase;
-      letter-spacing: 0.13em;
-      color: var(--accent);
+      letter-spacing: 0.15em;
+      color: var(--accent-dark);
       font-weight: 800;
     }
 
     .cv-card p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.55;
+      font-size: 0.94rem;
+      line-height: 1.62;
     }
 
     .cv-card ul {
@@ -162,45 +195,62 @@
       padding-left: 18px;
       color: var(--muted);
       font-size: 0.91rem;
+      line-height: 1.58;
     }
 
     .cv-card li + li {
-      margin-top: 5px;
+      margin-top: 6px;
+    }
+
+    .profile-summary {
+      border-left: 4px solid var(--accent);
+    }
+
+    .scouting-focus {
+      border: 1px solid #bde8dc;
+      border-radius: 13px;
+      padding: 14px 15px;
+      background: linear-gradient(135deg, #effcf7 0%, #ffffff 100%);
+      box-shadow: 0 8px 18px rgba(15, 118, 110, 0.08);
+    }
+
+    .scouting-focus strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #0b615a;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .scouting-focus p {
+      color: #173a35;
+      font-weight: 700;
     }
 
     .scouting-profile-card {
-      padding: 14px 15px;
       background:
-        linear-gradient(180deg, rgba(31, 143, 95, 0.045), rgba(255, 255, 255, 0)),
+        linear-gradient(180deg, rgba(18, 163, 127, 0.05), rgba(255, 255, 255, 0)),
         #ffffff;
     }
 
     .scouting-profile-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 7px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
       padding-left: 0 !important;
       list-style: none;
     }
 
     .scouting-profile-list li {
-      position: relative;
-      padding-left: 14px;
-      color: #182234;
-      font-size: 0.9rem;
+      border: 1px solid #cbe6dd;
+      border-radius: 999px;
+      padding: 5px 8px;
+      background: #f3fbf8;
+      color: #15362f;
+      font-size: 0.78rem;
       font-weight: 650;
-      line-height: 1.32;
-    }
-
-    .scouting-profile-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.58em;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
+      line-height: 1.2;
     }
 
     .reports-subheading {
@@ -212,17 +262,76 @@
       text-transform: uppercase;
     }
 
+    .reports-card {
+      border-color: #cbded9;
+      box-shadow: 0 14px 32px rgba(7, 20, 38, 0.1);
+    }
+
+    .reports-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+    }
+
     .report-item,
     .education-item {
       border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 10px;
+      border-radius: 12px;
+      padding: 12px;
       background: #ffffff;
     }
 
-    .report-item + .report-item,
+    .experience-item {
+      border-color: #cfe2dc;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fcfb 100%);
+    }
+
+    .experience-item ul {
+      margin-top: 8px;
+    }
+
     .education-item + .education-item {
       margin-top: 8px;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .education-grid .education-item {
+      margin-top: 0;
+      padding: 11px;
+    }
+
+    .education-compact {
+      min-height: 0;
+      background: #fbfefd;
+    }
+
+    .education-highlight {
+      margin-top: 9px;
+      border-color: #9ddcca;
+      background: linear-gradient(145deg, #f2fbf8, #ffffff);
+    }
+
+    .education-subtitle {
+      margin: 2px 0 8px !important;
+      color: #233a49 !important;
+      font-size: 0.9rem !important;
+      font-weight: 750;
+      line-height: 1.35 !important;
+    }
+
+    .report-card {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-height: 100%;
+      color: inherit;
+      text-decoration: none;
+      border-color: #cfe1dc;
     }
 
     .report-item h4,
@@ -230,50 +339,110 @@
     .mini-heading {
       margin: 0;
       color: #0f172a;
-      font-size: 0.93rem;
+      font-size: 0.96rem;
       line-height: 1.3;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .report-item p,
     .education-item p {
       margin: 5px 0 0;
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.89rem;
+      line-height: 1.58;
+    }
+
+    .report-card p {
+      margin: 0;
+    }
+
+    .report-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 1px;
+    }
+
+    .report-tags span {
+      border: 1px solid #d3e8e2;
+      border-radius: 999px;
+      padding: 3px 7px;
+      background: #f5fbf9;
+      color: #31534d;
+      font-size: 0.68rem;
+      font-weight: 750;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .cv-inline-link {
-      margin-left: 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--accent);
+      display: inline-block;
+      margin-top: auto;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--accent-dark);
       text-decoration: none;
-      border-bottom: 1px solid rgba(15, 118, 110, 0.25);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .cv-inline-link:hover {
-      color: #0b615a;
-      border-bottom-color: rgba(11, 97, 90, 0.45);
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 9px;
+    }
+
+    .project-links .cv-inline-link {
+      margin-top: 0;
+    }
+
+    .title-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(15, 118, 110, 0.28);
+    }
+
+    .title-link:hover {
+      color: var(--accent-dark);
+      border-bottom-color: rgba(15, 118, 110, 0.52);
     }
 
     .mini-heading {
-      margin-top: 10px;
+      margin-top: 9px;
       margin-bottom: 8px;
+      font-size: 0.84rem;
     }
 
-    .pill-list {
-      display: grid;
+    .pill-list,
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
       gap: 6px;
     }
 
-    .pill-list div {
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      padding: 7px 9px;
-      background: #ffffff;
-      color: #334155;
-      font-size: 0.86rem;
-      line-height: 1.45;
+    .pill-list div,
+    .pill-list a,
+    .contact-list a,
+    .contact-list span {
+      border: 1px solid #d4e7e1;
+      border-radius: 999px;
+      padding: 6px 8px;
+      background: #f8fcfb;
+      color: #263b4b;
+      font-size: 0.79rem;
+      font-weight: 650;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+
+    .contact-list {
+      gap: 7px;
+    }
+
+    .availability-list {
+      padding-left: 16px;
+      line-height: 1.46;
     }
 
     .cv-footer {
@@ -292,7 +461,7 @@
       }
 
       .cv-hero {
-        padding: 16px;
+        padding: 18px;
       }
 
       .cv-hero-left {
@@ -300,26 +469,27 @@
       }
 
       .cv-avatar {
-        width: 84px;
-        height: 84px;
+        width: 121px;
+        height: 121px;
+        grid-row: 1;
+        margin-right: 0;
       }
 
       .cv-grid {
         grid-template-columns: 1fr;
-      }
-
-      .cv-main,
-      .cv-side {
-        padding: 14px 16px 16px;
+        padding: 10px;
       }
 
       .cv-side {
-        border-left: 0;
-        border-top: 1px solid var(--line);
+        order: 0;
       }
 
-      .cv-footer {
-        padding: 10px 16px 14px;
+      .reports-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -342,31 +512,70 @@
         border-radius: 0;
         box-shadow: none;
         overflow: visible;
-        transform: scale(0.9);
-        transform-origin: top left;
-        width: calc(100% / 0.9);
+        zoom: 0.78;
+        width: calc(100% / 0.78);
       }
 
       .cv-hero {
-        padding: 9px 10px;
+        padding: 10px 12px;
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
 
+      .header-inner,
+      .hero-inner,
+      .cv-header-inner,
+      .cv-hero-left {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap !important;
+        gap: 12px;
+      }
+
+      .cv-hero-left > div {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: calc(100% - 112px);
+      }
+
+      .header-photo,
+      .profile-photo,
+      .profile-image,
+      .cv-photo,
+      header img,
+      .cv-hero img,
       .cv-avatar {
-        width: 66px;
-        height: 66px;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      header img,
+      .cv-hero img,
+      .cv-avatar {
+        width: 96px !important;
+        height: 96px !important;
+        min-width: 96px;
+        max-width: 96px;
+        flex: 0 0 96px;
+        flex-shrink: 0 !important;
+        margin-right: 18px;
+        object-fit: cover !important;
+        border-radius: 50% !important;
       }
 
       .cv-hero h1 {
-        font-size: 1.4rem;
+        font-size: 2rem;
       }
 
       .cv-role {
         margin-top: 3px;
-        font-size: 0.75rem;
+        font-size: 0.72rem;
       }
 
-      .cv-intro {
-        margin-top: 5px;
+      .hero-kicker {
         font-size: 0.7rem;
       }
 
@@ -375,30 +584,24 @@
         gap: 4px;
       }
 
-      .cv-tags span {
+      .cv-tags span,
+      .cv-tags a {
         font-size: 0.63rem;
         padding: 3px 6px;
       }
 
       .cv-grid {
         display: grid;
-        grid-template-columns: 1.45fr 1fr;
+        grid-template-columns: 0.82fr 1.68fr;
         align-items: start;
-      }
-
-      .cv-main,
-      .cv-side {
-        padding: 8px 10px 8px;
-        background: #ffffff;
-      }
-
-      .cv-side {
-        border-left: 1px solid var(--line);
+        gap: 6px;
+        padding: 6px;
       }
 
       .cv-card {
-        margin-bottom: 1.6mm;
-        padding: 7px;
+        padding: 6px;
+        border-radius: 9px;
+        box-shadow: none;
         break-inside: avoid-page;
         page-break-inside: avoid;
       }
@@ -410,30 +613,28 @@
 
       .cv-card p,
       .cv-card ul {
-        font-size: 0.71rem;
+        font-size: 0.68rem;
       }
 
       .cv-card li + li {
         margin-top: 2px;
       }
 
-      .scouting-profile-card {
-        padding: 7px;
-      }
-
       .scouting-profile-list {
-        gap: 3px 8px;
+        gap: 3px;
       }
 
       .scouting-profile-list li {
-        font-size: 0.68rem;
-        line-height: 1.2;
+        font-size: 0.58rem;
+        padding: 3px 5px;
       }
 
       .report-item,
       .education-item,
       .pill-list div,
-      .cv-footer {
+      .pill-list a,
+      .contact-list a,
+      .contact-list span {
         break-inside: avoid-page;
         page-break-inside: avoid;
       }
@@ -450,17 +651,20 @@
 
       .report-item h4,
       .education-item h4 {
-        font-size: 0.73rem;
+        font-size: 0.7rem;
       }
 
       .report-item p,
       .education-item p,
-      .pill-list div {
-        font-size: 0.69rem;
+      .pill-list div,
+      .pill-list a,
+      .contact-list a,
+      .contact-list span {
+        font-size: 0.62rem;
       }
 
       .cv-inline-link {
-        font-size: 0.62rem;
+        font-size: 0.56rem;
       }
 
       .mini-heading {
@@ -469,22 +673,29 @@
         font-size: 0.7rem;
       }
 
-      .pill-list {
+      .pill-list,
+      .contact-list {
         gap: 3px;
       }
 
-      .pill-list div {
-        padding: 4px 6px;
+      .pill-list div,
+      .pill-list a,
+      .contact-list a,
+      .contact-list span {
+        padding: 3px 5px;
       }
 
-      .reports-card .report-item {
-        break-inside: avoid-page;
-        page-break-inside: avoid;
+      .reports-grid {
+        gap: 4px;
       }
 
-      .cv-footer {
-        padding: 6px 10px 8px;
-        font-size: 0.62rem;
+      .education-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px;
+      }
+
+      .education-grid .education-item {
+        padding: 6px;
       }
     }
   </style>
@@ -492,28 +703,33 @@
 <body>
   <div class="cv-shell">
     <section class="cv-hero">
-      <div class="cv-hero-left">
-        <img src="images/profile-optimized.jpg" alt="Cal Botterill headshot" class="cv-avatar" />
+      <div class="cv-hero-left header-inner hero-inner cv-header-inner">
         <div>
+          <p class="hero-kicker">Football Scouting / Analysis Profile</p>
           <h1>Cal Botterill</h1>
           <p class="cv-role">Football Scout | Player Profiling • Talent Identification • Match Analysis</p>
-          <p class="cv-intro">
-            Football scout with experience producing player, match and opposition reports through live and video
-            observation. Skilled in player profiling, role suitability assessment and identifying technical, tactical,
-            physical and psychological attributes to support recruitment and performance decision-making.
-          </p>
 
           <div class="cv-tags">
             <span>calwbotterill@gmail.com</span>
             <span>07584 693950</span>
-            <span><a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer">squadiq.co.uk</a></span>
+            <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer">squadiq.co.uk</a>
           </div>
         </div>
+        <img src="images/Suit Profile Pic.png" alt="Cal Botterill suit profile photo" class="cv-avatar header-photo profile-photo profile-image cv-photo" />
       </div>
     </section>
 
     <section class="cv-grid">
-      <div class="cv-main">
+      <aside class="cv-side">
+        <div class="cv-card">
+          <h3>Contact</h3>
+          <div class="contact-list">
+            <a href="mailto:calwbotterill@gmail.com">calwbotterill@gmail.com</a>
+            <span>07584 693950</span>
+            <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer">squadiq.co.uk</a>
+          </div>
+        </div>
+
         <div class="cv-card scouting-profile-card">
           <h3>Core Scouting Areas</h3>
           <ul class="scouting-profile-list">
@@ -521,82 +737,13 @@
             <li>Talent Identification</li>
             <li>Match Analysis</li>
             <li>Opposition Analysis</li>
-            <li>Recruitment Profiling</li>
-            <li>Written Reporting</li>
+            <li>Recruitment Reporting</li>
+            <li>Role Suitability Analysis</li>
+            <li>Tactical Observation</li>
+            <li>Written Scouting Reports</li>
           </ul>
         </div>
 
-        <div class="cv-card reports-card">
-          <h3>Selected Reports</h3>
-          <p class="reports-subheading">Player Reports • Opposition Analysis • Match Reports</p>
-
-          <div class="report-item">
-            <h4>
-              Man City U18s vs Derby U18s
-              <a href="reports/man-city-u18-vs-derby-county-u18-5-3-11-player-report.html" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
-            </h4>
-            <p>
-              Eleven-player scouting report from a 5-3 U18 Premier League North fixture.
-            </p>
-          </div>
-
-          <div class="report-item">
-            <h4>
-              Arsenal U18s vs Crystal Palace U18s
-              <a href="reports/arsenal-u18-vs-crystal-palace-u18-2-3-player-report.html" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
-            </h4>
-            <p>
-              Eleven-player scouting report from a 3-2 U18 Premier League South fixture.
-            </p>
-          </div>
-
-          <div class="report-item">
-            <h4>
-              Derby County Women vs Sporting Khalsa Women
-              <a href="reports/derby-county-women-scouting-report.html" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
-            </h4>
-            <p>
-              Player-focused scouting report from a 2-1 FA Women's National League fixture.
-            </p>
-          </div>
-
-          <div class="report-item">
-            <h4>
-              Liverpool Opposition Report
-              <a href="reports/liverpool-opposition-report.html" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
-            </h4>
-            <p>
-              Pre-match opposition scouting report on Liverpool.
-            </p>
-          </div>
-
-          <div class="report-item">
-            <h4>
-              Valentin Barco Three-Match Report
-              <a href="document-viewer.html?file=reports%2Fvalentin-barco-3-match-report.pdf&title=Valentin%20Barco%203%20Match%20Report" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View report</a>
-            </h4>
-            <p>
-              Three-match scouting report based on three live observations.
-            </p>
-          </div>
-        </div>
-
-        <div class="cv-card">
-          <h3>Scouting Projects</h3>
-          <div class="report-item">
-            <h4>
-              Founder, SquadIQ
-              <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View SquadIQ</a>
-            </h4>
-            <p>
-              Developed SquadIQ, a scouting and squad management platform built from my own analysis workflow. Designed
-              to support player profiling, match preparation and recruitment assessment.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <aside class="cv-side">
         <div class="cv-card">
           <h3>Qualifications</h3>
           <h4 class="mini-heading">PFSA Qualifications</h4>
@@ -622,28 +769,113 @@
             <div>Hudl</div>
             <div>StatsBomb</div>
             <div>Excel</div>
-            <div>SquadIQ</div>
+            <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer">SquadIQ</a>
           </div>
         </div>
 
         <div class="cv-card">
-          <h3>Education and Research</h3>
-
-          <div class="education-item">
-            <h4>BSc Sports Science</h4>
-            <p>Studied physiology, psychology, biomechanics and performance analysis, developing a broad understanding of athlete development and sporting performance.</p>
-          </div>
-
-          <div class="education-item">
-            <h4>BTEC Level 3 Extended Diploma in Sport</h4>
-          </div>
-
-          <div class="education-item">
-            <h4>Dissertation</h4>
-            <p>Skills &amp; Attributes Required by Football Clubs from Academy Graduates</p>
-          </div>
+          <h3>Scouting Availability</h3>
+          <ul class="availability-list">
+            <li>Live match observation</li>
+            <li>Academy, youth, women&rsquo;s and non-league scouting</li>
+            <li>Player, match and opposition reports</li>
+            <li>UK-based with remote video analysis</li>
+          </ul>
         </div>
       </aside>
+
+      <div class="cv-main">
+        <div class="cv-card profile-summary">
+          <h3>Profile Summary</h3>
+          <p>
+            Football scout with experience producing player, match and opposition reports through live and video
+            observation. Skilled in player profiling, role suitability, tactical analysis and recruitment-focused
+            reporting. Combines sport science knowledge, scouting qualifications and independent analysis work to
+            deliver clear, practical insights for performance and recruitment decision-making.
+          </p>
+        </div>
+
+        <div class="cv-card">
+          <h3>Experience</h3>
+          <div class="report-item experience-item">
+            <h4>Independent Football Scout / Analyst</h4>
+            <p>2025 – Present</p>
+            <ul>
+              <li>Produce live and video-based player, opposition and match reports.</li>
+              <li>Assess technical, tactical, physical and psychological player qualities.</li>
+              <li>Profile players by position, role suitability and recruitment relevance.</li>
+              <li>Analyse team structures, match trends, in-possession/out-of-possession behaviours and key tactical patterns.</li>
+              <li>Create clear written reports to support coaching, recruitment and player evaluation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-card reports-card">
+          <h3>Portfolio Report Samples</h3>
+          <p class="reports-subheading">A small selection of scouting reports included in this portfolio pack.</p>
+
+          <div class="reports-grid">
+            <div class="report-item report-card">
+              <h4>
+                Man City U18s vs Derby U18s
+              </h4>
+              <p>Twenty-four player scouting report from a U18 Premier League North fixture.</p>
+            </div>
+
+            <div class="report-item report-card">
+              <h4>Arsenal U18s vs Crystal Palace U18s</h4>
+              <p>Twenty-four player scouting report from a U18 Premier League South fixture.</p>
+            </div>
+
+            <div class="report-item report-card">
+              <h4>Derby County Women vs Sporting Khalsa Women</h4>
+              <p>Player-focused scouting report from an FA Women&rsquo;s National League fixture.</p>
+            </div>
+
+            <div class="report-item report-card">
+              <h4>Chelsea U16s vs Atletico Madrid U16s</h4>
+              <p>Player-focused scouting report from an academy-level U16 fixture.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-card">
+          <h3>Scouting Projects</h3>
+          <div class="report-item">
+            <h4>
+              Founder, <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer" class="title-link">SquadIQ</a>
+            </h4>
+            <p>
+              Developed a football scouting and squad management platform to support player profiling, role suitability,
+              match preparation and team analysis. Built from my own scouting workflow to help grassroots and
+              academy-level teams assess players and prepare for matches.
+            </p>
+            <div class="project-links">
+              <a href="https://www.squadiq.co.uk/" target="_blank" rel="noopener noreferrer" class="cv-inline-link">View SquadIQ Platform</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-card">
+          <h3>Education &amp; Football Research</h3>
+
+          <div class="education-grid">
+            <div class="education-item education-compact">
+              <h4>BSc Sports Science</h4>
+            </div>
+
+            <div class="education-item education-compact">
+              <h4>BTEC Level 3 Extended Diploma in Sport</h4>
+            </div>
+          </div>
+
+          <div class="education-item education-highlight">
+            <h4>Dissertation Research</h4>
+            <p class="education-subtitle">Skills &amp; Attributes Required by Football Clubs from Academy Graduates</p>
+            <p>Research focused on the technical, tactical, physical and psychological qualities football clubs look for in academy graduates, with direct relevance to player profiling, development pathways and recruitment assessment.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
   </div>
