@@ -55,8 +55,8 @@
     .cv-header {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 26px;
-      align-items: center;
+      gap: 24px;
+      align-items: start;
       padding: 24px 30px 20px;
       background: linear-gradient(135deg, var(--header) 0%, #172033 100%);
       color: #ffffff;
@@ -81,14 +81,13 @@
 
     .header-side {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items: center;
+      justify-items: end;
+      gap: 12px;
     }
 
     .headshot {
-      width: 92px;
-      height: 92px;
+      width: 118px;
+      height: 118px;
       border: 2px solid rgba(183, 255, 240, 0.54);
       border-radius: 50%;
       object-fit: cover;
@@ -320,8 +319,7 @@
       }
 
       .header-side {
-        grid-template-columns: 1fr auto;
-        align-items: start;
+        justify-items: start;
       }
 
       .contact {
@@ -369,12 +367,12 @@
       }
 
       .header-side {
-        gap: 10px;
+        gap: 8px;
       }
 
       .headshot {
-        width: 70px;
-        height: 70px;
+        width: 88px;
+        height: 88px;
         box-shadow: none;
       }
 
@@ -477,12 +475,12 @@
         <p class="cv-title">Operations | Business Development | Client Services</p>
       </div>
       <div class="header-side">
+        <img src="images/Suit Profile Pic.png" alt="Cal Botterill professional headshot" class="headshot" />
         <div class="contact" aria-label="Contact details">
           <a href="tel:07584693950">07584 693950</a>
           <a href="mailto:calwbotterill@gmail.com">calwbotterill@gmail.com</a>
           <span>Croydon / London</span>
         </div>
-        <img src="images/Suit Profile Pic.png" alt="Cal Botterill professional headshot" class="headshot" />
       </div>
     </header>
 
