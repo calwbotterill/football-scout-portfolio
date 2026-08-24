@@ -45,7 +45,7 @@
     }
 
     .cv-page {
-      width: min(980px, calc(100% - 28px));
+      width: min(960px, calc(100% - 28px));
       margin: 18px auto;
       background: var(--paper);
       border: 1px solid #cfd8e3;
@@ -55,16 +55,16 @@
     .cv-header {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 22px;
-      align-items: end;
-      padding: 28px 32px 22px;
+      gap: 26px;
+      align-items: center;
+      padding: 24px 30px 20px;
       background: linear-gradient(135deg, var(--header) 0%, #172033 100%);
       color: #ffffff;
     }
 
     .cv-name {
       margin: 0;
-      font-size: clamp(2.15rem, 4.8vw, 3.3rem);
+      font-size: clamp(2.2rem, 4.8vw, 3.35rem);
       line-height: 0.95;
       letter-spacing: 0;
       font-weight: 850;
@@ -79,12 +79,30 @@
       text-transform: uppercase;
     }
 
+    .header-side {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .headshot {
+      width: 86px;
+      height: 86px;
+      border: 2px solid rgba(183, 255, 240, 0.54);
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 18%;
+      background: #1f2937;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+    }
+
     .contact {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
       gap: 7px;
-      max-width: 360px;
+      max-width: 290px;
     }
 
     .contact a,
@@ -105,9 +123,9 @@
 
     .cv-body {
       display: grid;
-      grid-template-columns: 0.9fr 1.55fr;
-      gap: 22px;
-      padding: 24px 32px 28px;
+      grid-template-columns: 0.78fr 1.72fr;
+      gap: 24px;
+      padding: 23px 30px 27px;
     }
 
     .section {
@@ -116,7 +134,7 @@
     }
 
     .section + .section {
-      margin-top: 18px;
+      margin-top: 17px;
     }
 
     h2 {
@@ -134,7 +152,7 @@
     }
 
     .profile {
-      padding: 15px 16px;
+      padding: 13px 15px;
       border-left: 4px solid var(--accent);
       background: var(--soft);
     }
@@ -147,21 +165,20 @@
     .skill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
+      gap: 6px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
     .skill-list li {
-      padding: 6px 8px;
-      border: 1px solid #cfdde7;
-      border-radius: 8px;
-      background: #fbfcfe;
+      padding: 5px 0 5px 10px;
+      border-left: 2px solid rgba(15, 118, 110, 0.42);
       color: #1f2937;
-      font-size: 0.78rem;
+      font-size: 0.79rem;
       font-weight: 700;
       line-height: 1.2;
+      flex: 1 1 100%;
     }
 
     .role {
@@ -219,7 +236,7 @@
     }
 
     .lead-role {
-      padding: 14px 15px;
+      padding: 13px 14px;
       border: 1px solid #bcd7d4;
       border-radius: 10px;
       background: linear-gradient(180deg, #f7fffd 0%, #ffffff 100%);
@@ -243,14 +260,12 @@
     }
 
     .side-card {
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fbfcfe;
+      padding: 0 0 14px;
+      border-bottom: 1px solid var(--line);
     }
 
     .side-card + .side-card {
-      margin-top: 13px;
+      margin-top: 15px;
     }
 
     .education-item + .education-item,
@@ -300,8 +315,14 @@
         grid-template-columns: 1fr;
       }
 
+      .header-side {
+        grid-template-columns: auto 1fr;
+        align-items: start;
+      }
+
       .contact {
         justify-content: flex-start;
+        max-width: none;
       }
 
       .cv-body {
@@ -332,15 +353,25 @@
       }
 
       .cv-header {
-        padding: 18px 22px 15px;
+        padding: 15px 20px 13px;
       }
 
       .cv-name {
-        font-size: 2.35rem;
+        font-size: 2.25rem;
       }
 
       .cv-title {
         font-size: 0.72rem;
+      }
+
+      .header-side {
+        gap: 10px;
+      }
+
+      .headshot {
+        width: 66px;
+        height: 66px;
+        box-shadow: none;
       }
 
       .contact a,
@@ -351,9 +382,9 @@
       }
 
       .cv-body {
-        grid-template-columns: 0.86fr 1.64fr;
+        grid-template-columns: 0.78fr 1.72fr;
         gap: 14px;
-        padding: 14px 22px 18px;
+        padding: 13px 20px 16px;
       }
 
       .section + .section {
@@ -383,8 +414,7 @@
       }
 
       .skill-list li {
-        padding: 4px 6px;
-        border-radius: 6px;
+        padding: 3px 0 3px 7px;
         font-size: 0.62rem;
       }
 
@@ -393,6 +423,11 @@
         padding: 8px;
         border-radius: 7px;
         box-shadow: none;
+      }
+
+      .side-card {
+        padding: 0 0 7px;
+        border-radius: 0;
       }
 
       .role + .role {
@@ -435,12 +470,15 @@
     <header class="cv-header">
       <div>
         <h1 class="cv-name">Cal Botterill</h1>
-        <p class="cv-title">Business Operations | Client Services | Sales &amp; Account Support</p>
+        <p class="cv-title">Operations | Business Development | Client Services</p>
       </div>
-      <div class="contact" aria-label="Contact details">
-        <a href="tel:07584693950">07584 693950</a>
-        <a href="mailto:calwbotterill@gmail.com">calwbotterill@gmail.com</a>
-        <span>Croydon / London</span>
+      <div class="header-side">
+        <img src="images/Suit Profile Pic.png" alt="Cal Botterill professional headshot" class="headshot" />
+        <div class="contact" aria-label="Contact details">
+          <a href="tel:07584693950">07584 693950</a>
+          <a href="mailto:calwbotterill@gmail.com">calwbotterill@gmail.com</a>
+          <span>Croydon / London</span>
+        </div>
       </div>
     </header>
 
@@ -451,13 +489,12 @@
           <ul class="skill-list">
             <li>Client Relationship Management</li>
             <li>Sales &amp; Business Development</li>
-            <li>Customer Service</li>
             <li>Business Operations</li>
-            <li>Communication &amp; Negotiation</li>
+            <li>Customer Service</li>
             <li>Lead Handling &amp; Client Onboarding</li>
+            <li>Communication &amp; Negotiation</li>
             <li>Team Coordination</li>
-            <li>Administration &amp; Organisation</li>
-            <li>Microsoft Office / Digital Systems</li>
+            <li>Problem Solving</li>
           </ul>
         </section>
 
@@ -482,7 +519,6 @@
           <ul class="info-list">
             <li>Full UK Driving Licence</li>
             <li>Comfortable using Microsoft Office and digital business systems</li>
-            <li>Degree-level research and analysis experience</li>
           </ul>
           <div class="download-row">
             <a href="document-viewer.html?file=2025%20updated%20CV.pdf&title=2025%20Updated%20CV" target="_blank" rel="noopener noreferrer">Open PDF CV</a>
@@ -494,7 +530,7 @@
         <section class="section profile">
           <h2>Professional Profile</h2>
           <p>
-            Commercially minded professional with experience across business operations, client services, customer service and sales-focused environments. Has supported the running of a client-facing professional services business, handling enquiries, onboarding clients, coordinating work and helping improve internal processes. Confident building relationships by phone, email and in person, with strong commercial awareness and the ability to work independently, take ownership and solve problems. Degree-educated and now targeting roles across sales, marketing, business development, account management, customer success and operations.
+            Commercially minded professional with experience across business operations, client services, sales-focused environments and fast-paced retail. Skilled in handling enquiries, building client relationships, supporting onboarding and keeping operations organised under pressure. Brings strong communication, commercial awareness and a confident customer-facing approach, with degree-level education and practical experience supporting both professional services and commercial teams.
           </p>
         </section>
 
@@ -503,19 +539,18 @@
           <article class="role lead-role">
             <div class="role-head">
               <div>
-                <h3>Business Operations &amp; Client Services</h3>
+                <h3>Business Operations &amp; Development</h3>
                 <span class="company">Family Law Decisions</span>
               </div>
               <span class="date">Current / Recent</span>
             </div>
             <ul>
-              <li>Supported the day-to-day running and growth of a client-facing professional services business, balancing client communication, administration and operational priorities.</li>
-              <li>Handled incoming enquiries from prospective clients, clarified requirements and helped move suitable enquiries towards paid services through clear, confident communication.</li>
-              <li>Maintained contact with prospective and existing clients by telephone, email and digital channels, helping keep the client journey organised and professional.</li>
-              <li>Supported onboarding, appointment coordination and allocation of work to appropriate team members, including McKenzie Friends and paralegals.</li>
-              <li>Contributed to business development and customer acquisition activity, including online presence, lead generation and practical improvements to the sales process.</li>
-              <li>Helped improve internal workflows, systems and service processes so enquiries, client information and follow-up actions were handled more efficiently.</li>
-              <li>Worked closely with management on growth ideas, service improvements, invoicing support, payment tracking and wider commercial administration.</li>
+              <li>Supported the running and growth of a client-facing professional services business, combining client communication, commercial administration and operational coordination.</li>
+              <li>Handled prospective client enquiries, clarified needs and supported conversion into paid services through clear questioning, follow-up and confident communication.</li>
+              <li>Managed relationships with prospective and existing clients across telephone, email and digital channels, supporting conversion, retention and ongoing service delivery.</li>
+              <li>Coordinated onboarding, appointments and allocation of work to appropriate team members, including McKenzie Friends and paralegals.</li>
+              <li>Contributed to business development and marketing activity, including online presence, lead generation and improvements to the customer acquisition process.</li>
+              <li>Improved internal workflows around enquiries, client information, follow-up actions, invoicing support and payment tracking to keep operations more organised.</li>
             </ul>
           </article>
 
@@ -528,16 +563,16 @@
               <span class="date">Recent Retail Experience</span>
             </div>
             <ul>
-              <li>Worked in a fast-paced commercial environment, supporting store standards, stock routines, customer service and payment handling.</li>
-              <li>Met performance expectations across varied shifts while staying organised, reliable and calm under pressure.</li>
-              <li>Dealt confidently with customer queries and practical problems, contributing to an efficient team environment.</li>
+              <li>Delivered confident customer service in a high-volume commercial setting, handling queries, payments and practical issues with professionalism.</li>
+              <li>Maintained strong operational standards across stock, presentation and store routines while working at pace and under pressure.</li>
+              <li>Supported team performance by staying organised across varied tasks, adapting quickly and taking ownership during busy trading periods.</li>
             </ul>
           </article>
 
           <article class="role compact-role">
             <div class="role-head">
               <div>
-                <h3>Additional Customer-Facing Experience</h3>
+                <h3>Additional Experience</h3>
                 <span class="company">Tesco | Iceland | Subway | Camp Walden, New York</span>
               </div>
               <span class="date">Previous Roles</span>
