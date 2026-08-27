@@ -86,7 +86,7 @@
       gap: 12px;
     }
 
-    .headshot {
+    .headshot-frame {
       position: absolute;
       top: 50%;
       right: 22px;
@@ -95,10 +95,19 @@
       height: 118px;
       border: 2px solid rgba(183, 255, 240, 0.54);
       border-radius: 50%;
-      object-fit: cover;
-      object-position: center 18%;
+      overflow: hidden;
       background: #1f2937;
       box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+    }
+
+    .headshot {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+      transform: scale(1.18);
+      transform-origin: center 18%;
     }
 
     .contact {
@@ -375,7 +384,7 @@
         gap: 8px;
       }
 
-      .headshot {
+      .headshot-frame {
         top: 50%;
         right: 16px;
         width: 88px;
@@ -482,7 +491,9 @@
         <p class="cv-title">Operations | Business Development | Client Services</p>
       </div>
       <div class="header-side">
-        <img src="images/Suit Profile Pic.png" alt="Cal Botterill professional headshot" class="headshot" />
+        <div class="headshot-frame">
+          <img src="images/Suit Profile Pic.png" alt="Cal Botterill professional headshot" class="headshot" />
+        </div>
         <div class="contact" aria-label="Contact details">
           <a href="tel:07584693950">07584 693950</a>
           <a href="mailto:calwbotterill@gmail.com">calwbotterill@gmail.com</a>
