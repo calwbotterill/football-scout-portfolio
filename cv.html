@@ -13,15 +13,15 @@
   <link rel="shortcut icon" href="favicon-32.png?v=20260410-3" type="image/png" />
   <style>
     :root {
-      --page: #eef2f6;
+      --page: #f3f6f8;
       --paper: #ffffff;
       --ink: #111827;
-      --muted: #4b5563;
-      --soft: #f4f7fa;
-      --line: #d8e0e8;
-      --accent: #0f766e;
-      --accent-dark: #0b4f4a;
-      --header: #0f172a;
+      --muted: #505a66;
+      --soft: #f7f9fb;
+      --line: #e2e8ef;
+      --accent: #2a7f74;
+      --accent-dark: #1f5d56;
+      --header: #111827;
     }
 
     * {
@@ -48,8 +48,8 @@
       width: min(960px, calc(100% - 28px));
       margin: 18px auto;
       background: var(--paper);
-      border: 1px solid #cfd8e3;
-      box-shadow: 0 18px 46px rgba(15, 23, 42, 0.12);
+      border: 1px solid #dce3eb;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
     }
 
     .cv-header {
@@ -59,7 +59,7 @@
       gap: 24px;
       align-items: start;
       padding: 24px 170px 20px 30px;
-      background: linear-gradient(135deg, var(--header) 0%, #172033 100%);
+      background: linear-gradient(135deg, var(--header) 0%, #1b2433 100%);
       color: #ffffff;
     }
 
@@ -68,15 +68,15 @@
       font-size: clamp(2.2rem, 4.8vw, 3.35rem);
       line-height: 0.95;
       letter-spacing: 0;
-      font-weight: 850;
+      font-weight: 800;
     }
 
     .cv-title {
       margin: 9px 0 0;
-      color: #b7fff0;
+      color: #b9eee3;
       font-size: 0.95rem;
-      font-weight: 750;
-      letter-spacing: 0.07em;
+      font-weight: 680;
+      letter-spacing: 0.065em;
       text-transform: uppercase;
     }
 
@@ -93,11 +93,11 @@
       transform: translateY(-50%);
       width: 118px;
       height: 118px;
-      border: 2px solid rgba(183, 255, 240, 0.54);
+      border: 2px solid rgba(255, 255, 255, 0.32);
       border-radius: 50%;
       overflow: hidden;
       background: #1f2937;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
     }
 
     .headshot {
@@ -124,12 +124,12 @@
       align-items: center;
       min-height: 28px;
       padding: 5px 9px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #f8fafc;
+      background: rgba(255, 255, 255, 0.055);
+      color: #eef4f7;
       font-size: 0.79rem;
-      font-weight: 650;
+      font-weight: 600;
       text-decoration: none;
       white-space: nowrap;
     }
@@ -152,10 +152,10 @@
 
     h2 {
       margin: 0 0 9px;
-      color: var(--accent-dark);
+      color: #27645d;
       font-size: 0.76rem;
-      font-weight: 850;
-      letter-spacing: 0.12em;
+      font-weight: 760;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
     }
 
@@ -166,7 +166,7 @@
 
     .profile {
       padding: 13px 15px;
-      border-left: 4px solid var(--accent);
+      border-left: 3px solid rgba(42, 127, 116, 0.62);
       background: var(--soft);
     }
 
@@ -186,17 +186,17 @@
 
     .skill-list li {
       padding: 5px 0 5px 10px;
-      border-left: 2px solid rgba(15, 118, 110, 0.42);
+      border-left: 2px solid rgba(42, 127, 116, 0.28);
       color: #1f2937;
       font-size: 0.79rem;
-      font-weight: 700;
+      font-weight: 650;
       line-height: 1.2;
       flex: 1 1 100%;
     }
 
     .role {
       padding-bottom: 15px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(226, 232, 239, 0.92);
     }
 
     .role + .role {
@@ -228,13 +228,13 @@
       margin-top: 2px;
       color: var(--accent-dark);
       font-size: 0.88rem;
-      font-weight: 800;
+      font-weight: 740;
     }
 
     .date {
       color: #5b6675;
       font-size: 0.78rem;
-      font-weight: 750;
+      font-weight: 680;
       white-space: nowrap;
     }
 
@@ -254,10 +254,10 @@
 
     .lead-role {
       padding: 13px 14px;
-      border: 1px solid #bcd7d4;
-      border-radius: 10px;
-      background: linear-gradient(180deg, #f7fffd 0%, #ffffff 100%);
-      box-shadow: 0 10px 22px rgba(15, 118, 110, 0.08);
+      border: 1px solid #d7e6e3;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #fbfefd 0%, #ffffff 100%);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.045);
     }
 
     .lead-role .role-head {
@@ -265,11 +265,11 @@
     }
 
     .lead-role h3 {
-      font-size: 1.08rem;
+      font-size: 1.06rem;
     }
 
     .lead-role li {
-      color: #324152;
+      color: #374151;
     }
 
     .compact-role ul {
@@ -292,7 +292,7 @@
 
     .education-title {
       color: #172033;
-      font-weight: 850;
+      font-weight: 760;
     }
 
     .education-detail,
@@ -318,10 +318,10 @@
       min-height: 34px;
       padding: 8px 12px;
       border-radius: 8px;
-      background: var(--accent-dark);
+      background: #215f58;
       color: #ffffff;
       font-size: 0.82rem;
-      font-weight: 800;
+      font-weight: 720;
       text-decoration: none;
     }
 
