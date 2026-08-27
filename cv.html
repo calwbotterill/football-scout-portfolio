@@ -13,12 +13,12 @@
   <link rel="shortcut icon" href="favicon-32.png?v=20260410-3" type="image/png" />
   <style>
     :root {
-      --page: #f3f6f8;
+      --page: #f5f7f9;
       --paper: #ffffff;
       --ink: #111827;
       --muted: #505a66;
-      --soft: #f7f9fb;
-      --line: #e2e8ef;
+      --soft: #fafbfc;
+      --line: #e5eaf0;
       --accent: #2a7f74;
       --accent-dark: #1f5d56;
       --header: #111827;
@@ -49,23 +49,25 @@
       margin: 18px auto;
       background: var(--paper);
       border: 1px solid #dce3eb;
-      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
     }
 
     .cv-header {
       position: relative;
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 24px;
+      gap: 28px;
       align-items: start;
-      padding: 24px 170px 20px 30px;
-      background: linear-gradient(135deg, var(--header) 0%, #1b2433 100%);
-      color: #ffffff;
+      padding: 28px 170px 21px 30px;
+      background: #ffffff;
+      color: var(--header);
+      border-top: 5px solid var(--header);
+      border-bottom: 1px solid var(--line);
     }
 
     .cv-name {
       margin: 0;
-      font-size: clamp(2.2rem, 4.8vw, 3.35rem);
+      font-size: clamp(2.3rem, 4.8vw, 3.4rem);
       line-height: 0.95;
       letter-spacing: 0;
       font-weight: 800;
@@ -73,7 +75,7 @@
 
     .cv-title {
       margin: 9px 0 0;
-      color: #b9eee3;
+      color: var(--accent-dark);
       font-size: 0.95rem;
       font-weight: 680;
       letter-spacing: 0.065em;
@@ -93,11 +95,11 @@
       transform: translateY(-50%);
       width: 118px;
       height: 118px;
-      border: 2px solid rgba(255, 255, 255, 0.32);
+      border: 1px solid #d7e1e8;
       border-radius: 50%;
       overflow: hidden;
       background: #1f2937;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
     }
 
     .headshot {
@@ -114,31 +116,39 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 7px;
-      max-width: 290px;
+      gap: 5px 9px;
+      max-width: 310px;
     }
 
     .contact a,
     .contact span {
       display: inline-flex;
       align-items: center;
-      min-height: 28px;
-      padding: 5px 9px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.055);
-      color: #eef4f7;
+      min-height: auto;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #384454;
       font-size: 0.79rem;
       font-weight: 600;
       text-decoration: none;
       white-space: nowrap;
     }
 
+    .contact a + a::before,
+    .contact span::before {
+      content: "/";
+      margin-right: 9px;
+      color: #9aa6b2;
+      font-weight: 400;
+    }
+
     .cv-body {
       display: grid;
       grid-template-columns: 0.78fr 1.72fr;
-      gap: 24px;
-      padding: 23px 30px 27px;
+      gap: 28px;
+      padding: 24px 30px 28px;
     }
 
     .section {
@@ -151,12 +161,21 @@
     }
 
     h2 {
-      margin: 0 0 9px;
-      color: #27645d;
+      margin: 0 0 10px;
+      color: var(--header);
       font-size: 0.76rem;
       font-weight: 760;
       letter-spacing: 0.11em;
       text-transform: uppercase;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 32px;
+      height: 2px;
+      margin-top: 6px;
+      background: rgba(42, 127, 116, 0.42);
     }
 
     p {
@@ -165,9 +184,10 @@
     }
 
     .profile {
-      padding: 13px 15px;
-      border-left: 3px solid rgba(42, 127, 116, 0.62);
-      background: var(--soft);
+      padding: 0 0 16px;
+      border-left: 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
     }
 
     .profile p {
@@ -185,11 +205,12 @@
     }
 
     .skill-list li {
-      padding: 5px 0 5px 10px;
-      border-left: 2px solid rgba(42, 127, 116, 0.28);
+      padding: 4px 0;
+      border-left: 0;
+      border-bottom: 1px solid rgba(226, 232, 239, 0.7);
       color: #1f2937;
       font-size: 0.79rem;
-      font-weight: 650;
+      font-weight: 620;
       line-height: 1.2;
       flex: 1 1 100%;
     }
@@ -253,11 +274,12 @@
     }
 
     .lead-role {
-      padding: 13px 14px;
-      border: 1px solid #d7e6e3;
-      border-radius: 8px;
-      background: linear-gradient(180deg, #fbfefd 0%, #ffffff 100%);
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.045);
+      padding: 0 0 15px;
+      border: 0;
+      border-bottom: 1px solid rgba(226, 232, 239, 0.92);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
     }
 
     .lead-role .role-head {
@@ -265,7 +287,7 @@
     }
 
     .lead-role h3 {
-      font-size: 1.06rem;
+      font-size: 1.08rem;
     }
 
     .lead-role li {
@@ -277,7 +299,7 @@
     }
 
     .side-card {
-      padding: 0 0 14px;
+      padding: 0 0 15px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -317,9 +339,10 @@
       width: 100%;
       min-height: 34px;
       padding: 8px 12px;
-      border-radius: 8px;
-      background: #215f58;
-      color: #ffffff;
+      border: 1px solid rgba(42, 127, 116, 0.28);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--accent-dark);
       font-size: 0.82rem;
       font-weight: 720;
       text-decoration: none;
@@ -369,7 +392,7 @@
       }
 
       .cv-header {
-        padding: 15px 122px 13px 20px;
+        padding: 17px 122px 14px 20px;
       }
 
       .cv-name {
@@ -395,14 +418,14 @@
       .contact a,
       .contact span {
         min-height: 0;
-        padding: 3px 7px;
+        padding: 0;
         font-size: 0.62rem;
       }
 
       .cv-body {
         grid-template-columns: 0.78fr 1.72fr;
-        gap: 14px;
-        padding: 13px 20px 16px;
+        gap: 16px;
+        padding: 14px 20px 17px;
       }
 
       .section + .section {
@@ -415,7 +438,7 @@
       }
 
       .profile {
-        padding: 9px 10px;
+        padding: 0 0 8px;
       }
 
       .profile p,
@@ -438,8 +461,8 @@
 
       .lead-role,
       .side-card {
-        padding: 8px;
-        border-radius: 7px;
+        padding: 0 0 8px;
+        border-radius: 0;
         box-shadow: none;
       }
 
